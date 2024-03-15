@@ -1,0 +1,336 @@
+<form>
+    <label for="sample-type">Select Type of Data:</label>
+    <select id="sample-type">
+        <option value="select">(Select)</option>
+        <option value="specimen">Specimen</option>
+        <option value="culture">Culture</option>
+        <option value="record">Record</option>
+        <!-- Add more options for different sample types as needed -->
+    </select>
+
+    <p> * indicates required fields </p>
+
+    <div id="select-textboxes">
+        <!-- Add content for select here if needed -->
+    </div>
+
+    <div id="specimen-textboxes" style="display: none;">
+        <label for="specimen-field1">Name: *</label>
+        <input type="text" id="specimen-field1" name="specimen-field1"><br>
+
+        <label for="specimen-name">Specimen Name *:</label>
+        <input type="text" id="specimen-name" name="specimen-name"><br>
+
+        <label for="specimen-collector">Collector *:</label>
+        <input type="text" id="specimen-collector" name="specimen-collector"><br>
+
+        <label for="specimen-print">Print:</label>
+        <label><input type="checkbox" id="specimen-print-spore-print" name="specimen-print" value="SporePrint">Contains Spore Print</label>
+        <label><input type="checkbox" id="specimen-print-no-spore-print" name="specimen-print" value="NoSporePrint">Does Not Contain Spore Print</label><br>
+
+        <label for="specimen-specimen">Specimen:</label>
+        <label><input type="checkbox" id="specimen-specimen-mushroom" name="specimen-specimen" value="Mushroom">Contains Mushroom</label>
+        <label><input type="checkbox" id="specimen-specimen-no-mushroom" name="specimen-specimen" value="NoMushroom">Does Not Contain Mushroom</label> <br>
+
+        <label for="specimen-hymenophore">Hymenophore: *</label>
+         <select id="hymenophore-dropdown">
+            <option value="agaricoid">Agaricoid</option>
+            <option value="secotioid">Secotioid</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="poroid">Poroid</option>
+        </select><br>
+
+        <label for="specimen-veil">Veil:</label>
+        <label><input type="checkbox" id="specimen-veil-partial" name="specimen-veil" value="PartialVeil">Partial Veil Present</label>
+        <label><input type="checkbox" id="specimen-veil-no-partial" name="specimen-veil" value="NoMushroom">No Partial Veil Present</label><br>
+
+        <label for="specimen-photos">Photos: *</label>
+        <input type="file" id="specimen-photo-upload" name="photo-upload" accept="image/*" multiple><br>
+
+        <label for="specimen-source-culture">Source Culture: *</label>
+        <input type="text" id="specimen-source-culture" name="specimen-source-culture"><br>
+
+        <label for="specimen-substrate">Substrate: *</label>
+        <input type="text" id="specimen-substrate" name="specimen-substrate"><br>
+
+        <label for="specimen-fungarium">Specimen Fungarium: *</label>
+        <input type="text" id="specimen-fungarium" name="specimen-fungarium"><br>
+
+        <label for="specimen-print-fungarium">Print Fungarium:</label>
+        <input type="text" id="specimen-print-fungarium" name="specimen-print-fungarium"><br>
+
+        <label for="notes-specimen">Notes Specimen:</label>
+        <input type="text" id="notes-specimen" name="notes-specimen"><br>
+
+        <label for="specimen-date">Specimen Date: *</label>
+        <input type="date" id="specimen-date" name="specimen-date"><br>
+
+        <label for="specimen-fungarium-date">Fungarium Date: *</label>
+        <input type="date" id="fungarium-date" name="fungarium-date"><br>
+
+        <label for="specimen-float-float">Number Floating:</label>
+        <input type="text" id="specimen-float-float" name="specimen-float-float"><br>
+
+        <label for="specimen-float-sink">Number Sinking:</label>
+        <input type="text" id="specimen-float-sink" name="specimen-float-sink"><br>
+    </div>
+
+    <div id="culture-textboxes" style="display: none;">
+        <label for="name">Name: *</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="culture-name">Culture Name: *</label>
+        <input type="text" id="culture-name" name="culture-name"><br>
+
+        <label for="culture-collector">Collector:</label>
+        <input type="text" id="culture-collector" name="culture-collector"><br>
+
+        <label for="culture-date">Culture Date: *</label>
+        <input type="date" id="culture-date" name="culture-date"><br>
+
+        <label for="culture-photos">Photos:</label>
+        <input type="file" id="culture-photo-upload" name="photo-upload" accept="image/*" multiple><br>
+
+        <label for="culture-media">Media: *</label>
+        <input type="text" id="culture-media" name="culture-media" value="MYA"><br>
+
+        <label for="culture-location">Culture Location: *</label>
+        <input type="text" id="culture-location" name="culture-location"><br>
+
+        <label for="culture-location-date">Culture Location Date: *</label>
+        <input type="date" id="culture-location-date" name="culture-location-date"><br>
+
+        <label for="notes-culture">Notes Culture:</label>
+        <input type="text" id="notes-culture" name="notes-culture"><br>
+
+        <label for="culture-transfer-from">Transfer From:</label>
+        <input type="text" id="culture-transfer-from" name="culture-transfer-from"><br>
+
+
+    </div>
+
+    <div id="record-textboxes" style="display: none;">
+        <label for="record-species">Species: *</label>
+        <input type="text" id="record-species" name="record-species"><br>
+
+        <label for="record-name">Name: *</label>
+        <input type="text" id="record-name" name="record-name"><br>
+
+        <label for="type">Type: *</label>
+            <select id="record-type">
+                <option value="wild">wild</option>
+                <option value="tissue-culture">tissue culture</option>
+                <option value="SSI">SSI</option>
+                <option value="cross">cross</option>
+                <option value="test-cross">test cross</option>
+                <option value="culture">culture</option>
+                <!-- Add more options for different types as needed -->
+            </select><br>
+
+        <label for="record-provider" id="provider-label">Provider:</label>
+        <input type="text" id="record-provider" name="record-provider"><br>
+
+        <label for="record-received-date">Received Date: *</label>
+        <input type="text" id="record-received-date" name="record-received-date"><br>
+
+        <label for="record-link">Link:</label>
+        <input type="text" id="record-link" name="record-link"><br>
+
+        <label for="record-lat" id="lat-label">Latitude: *</label>
+        <input type="text" id="record-lat" name="record-lat"><br>
+
+        <label for="record-long" id="long-label">Longitude: *</label>
+        <input type="text" id="record-long" name="record-long"><br>
+
+        <label for="record-accuracy" id="accuracy-label">Accuracy:</label>
+        <input type="text" id="record-accuracy" name="record-accuracy"><br>
+
+        <label for="record-locality" id="local-label">Locality: *</label>
+        <input type="text" id="record-locality" name="record-locality"><br>
+
+        <label for="record-location" id="location-label">Location:</label>
+        <input type="text" id="record-location" name="record-location"><br>
+
+        <label for="record-stream" id="stream-label">Stream:</label>
+        <input type="text" id="record-stream" name="record-stream"><br>
+
+        <label for="record-host-species" id="host-sp-label">Host Species:</label>
+        <input type="text" id="record-host-species" name="record-host-species"><br>
+
+        <label for="record-host-descr" id="host-descr-label">Host Description:</label>
+        <input type="text" id="record-host-descr" name="record-host-descr"><br>
+
+        <label for="type">Nuclear: *</label>
+            <select id="nuclear">
+                <option value="monokaryon">monokaryon</option>
+                <option value="dikaryon">dikaryon</option>
+                <!-- Add more options for different statuses as needed -->
+            </select><br>
+
+        <label for="allele-1">Allele 1:</label>
+            <select id="allele-1">
+                <option value="select">(Select)</option>
+                <option value="aga">aga</option>
+                <option value="sec">sec</option>
+                <!-- Add more options for different alleles as needed -->
+            </select><br>
+
+        <label for="record-allele-2 id=allele-2-label">Nuclear Allele 2:</label>
+        <input type="text" id="record-allele-2" name="record-allele-2"><br>
+
+        <label for="record-parent-1">Parent 1:</label>
+        <input type="text" id="record-parent-1" name="record-parent-1"><br>
+
+        <label for="record-parent-2">Parent 2:</label>
+        <input type="text" id="record-parent-2" name="record-parent-2"><br>
+
+        <label for="record-notes">Notes:</label>
+        <input type="text" id="record-notes" name="record-notes"><br>
+
+        <label for="record-projects">Projects:</label>
+        <input type="text" id="record-projects" name="record-projects"><br>
+
+        <label for="record-status">Status:</label>
+        <input type="text" id="record-status" name="record-status"><br>
+
+        <label for="record-flags">Flags:</label>
+        <input type="text" id="record-flags" name="record-flags"><br>
+
+        <label for="record-received-y">Received Year:</label>
+        <input type="text" id="record-received-y" name="record-received-y"><br>
+
+        <label for="record-received-m">Received Month:</label>
+        <input type="text" id="record-received-m" name="record-received-m"><br>
+
+        <label for="record-received-d">Received Day:</label>
+        <input type="text" id="record-received-d" name="record-received-d"><br>
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var sampleTypeSelect = document.getElementById('sample-type');
+    var selectTextBoxes = document.getElementById('select-textboxes');
+    var specimenTextBoxes = document.getElementById('specimen-textboxes');
+    var cultureTextBoxes = document.getElementById('culture-textboxes');
+    var recordTextBoxes = document.getElementById('record-textboxes');
+    var recordTypeSelect = document.getElementById('record-type');
+    var recordNuclearSelect = document.getElementById('nuclear');
+    var recordProviderInput = document.getElementById('record-provider');
+    var providerLabel = document.getElementById('provider-label');
+    var recordLatInput = document.getElementById('record-lat');
+    var latLabel = document.getElementById('lat-label');
+    var recordLongInput = document.getElementById('record-long');
+    var longLabel = document.getElementById('long-label');
+    var recordAccuInput = document.getElementById('record-accuracy');
+    var accuLabel = document.getElementById('accuracy-label');
+    var recordLocalInput = document.getElementById('record-locality');
+    var localLabel = document.getElementById('local-label');
+    var recordLocationInput = document.getElementById('record-location');
+    var locationLabel = document.getElementById('location-label');
+    var recordStreamInput = document.getElementById('record-stream');
+    var streamLabel = document.getElementById('stream-label');
+    var recordHostSpInput = document.getElementById('record-host-species');
+    var hostSpLabel = document.getElementById('host-sp-label');
+    var recordHostDescrInput = document.getElementById('record-host-descr');
+    var hostDescrLabel = document.getElementById('host-descr-label');
+    var recordAlleleInput = document.getElementById('record-allele-2');
+    var alleleLabel = document.getElementById('allele-2-label');
+    var specimenSourceCulture = document.getElementById('specimen-source-culture')
+    var specimenSubstrate = document.getElementById('specimen-substrate')
+
+    sampleTypeSelect.addEventListener('change', function() {
+        if (sampleTypeSelect.value === 'select') {
+            selectTextBoxes.style.display = 'block';
+            specimenTextBoxes.style.display = 'none';
+            cultureTextBoxes.style.display = 'none';
+            recordTextBoxes.style.display = 'none';
+        } else if (sampleTypeSelect.value === 'specimen') {
+            selectTextBoxes.style.display = 'none';
+            specimenTextBoxes.style.display = 'block';
+            cultureTextBoxes.style.display = 'none';
+            recordTextBoxes.style.display = 'none';
+
+        } else if (sampleTypeSelect.value === 'culture') {
+            selectTextBoxes.style.display = 'none';
+            specimenTextBoxes.style.display = 'none';
+            cultureTextBoxes.style.display = 'block';
+            recordTextBoxes.style.display = 'none';
+        } else if (sampleTypeSelect.value === 'record') {
+            selectTextBoxes.style.display = 'none';
+            specimenTextBoxes.style.display = 'none';
+            cultureTextBoxes.style.display = 'none';
+            recordTextBoxes.style.display = 'block';
+            updateProviderVisibility();
+        } else {
+            selectTextBoxes.style.display = 'none';
+            specimenTextBoxes.style.display = 'none';
+            cultureTextBoxes.style.display = 'none';
+            recordTextBoxes.style.display = 'none';
+        }
+    });
+    
+    recordNuclearSelect.addEventListener('change', updateNuclearVisibility);
+
+    function updateNuclearVisibility() {
+        if (recordTypeSelect.value !== 'dikaryon') {
+            recordAlleleInput.style.display = 'none';
+            alleleLabel.style.display = 'none';
+        } else {
+            recordAlleleInput.style.display = 'block';
+            alleleLabel.style.display = 'block';
+        }
+    }
+    recordTypeSelect.addEventListener('change', updateWildVisibility);
+              
+    function updateWildVisibility() {
+        // Hide provider box if Type is not wild
+        if (recordTypeSelect.value !== 'wild') {
+            recordProviderInput.style.display = 'none';
+            providerLabel.style.display = 'none';
+            recordLatInput.style.display = 'none';
+            latLabel.style.display = 'none';
+            recordLongInput.style.display = 'none';
+            longLabel.style.display = 'none';
+            recordAccuInput.style.display = 'none';
+            accuLabel.style.display = 'none';
+            recordLocalInput.style.display = 'none';
+            localLabel.style.display = 'none';
+            recordLocationInput.style.display = 'none';
+            locationLabel.style.display = 'none';
+            recordStreamInput.style.display = 'none';
+            streamLabel.style.display = 'none';
+            recordHostSpInput.style.display = 'none';
+            hostSpLabel.style.display = 'none';
+            recordHostDescrInput.style.display = 'none';
+            hostDescrLabel.style.display = 'none';
+            specimenSourceCulture.style.display = 'none';
+            specimenSubstrate.style.display = 'none';
+        } else {
+            recordProviderInput.style.display = 'block';
+            providerLabel.style.display = 'block';
+            recordLatInput.style.display = 'block';
+            latLabel.style.display = 'block';
+            recordLongInput.style.display = 'block';
+            longLabel.style.display = 'block';
+            recordAccuInput.style.display = 'block';
+            accuLabel.style.display = 'block';
+            recordLocalInput.style.display = 'block';
+            localLabel.style.display = 'block';
+            recordLocationInput.style.display = 'block';
+            locationLabel.style.display = 'none';
+            recordStreamInput.style.display = 'none';
+            streamLabel.style.display = 'block';
+            recordHostSpInput.style.display = 'block';
+            hostSpLabel.style.display = 'block';
+            recordHostDescrInput.style.display = 'block';
+            hostDescrLabel.style.display = 'block';
+        }
+    }
+
+    sampleTypeSelect.dispatchEvent(new Event('change'));
+    recordTypeSelect.dispatchEvent(new Event('change'));
+    nuclearTypeSelect.dispatchEvent(new Event('change'));
+});
+</script>
