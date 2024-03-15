@@ -175,13 +175,20 @@
                 <!-- Add more options for different alleles as needed -->
             </select><br>
 
-        <label for="record-allele-2 id=allele-2-label">Nuclear Allele 2:</label>
-        <input type="text" id="record-allele-2" name="record-allele-2"><br>
+        <label for="allele-2" id="allele-2-label">Allele 2:</label>
+            <select id="record-allele-2">
+                <option value="select">(Select)</option>
+                <option value="aga">aga</option>
+                <option value="sec">sec</option>
+                <!-- Add more options for different alleles as needed -->
+            </select><br>
 
-        <label for="record-parent-1">Parent 1:</label>
+
+
+        <label for="record-parent-1" id="parent-1-label">Parent 1: *</label>
         <input type="text" id="record-parent-1" name="record-parent-1"><br>
 
-        <label for="record-parent-2">Parent 2:</label>
+        <label for="record-parent-2" id="parent-2-label">Parent 2: *</label>
         <input type="text" id="record-parent-2" name="record-parent-2"><br>
 
         <label for="record-notes">Notes:</label>
@@ -189,25 +196,11 @@
 
         <label for="record-projects">Projects:</label>
         <input type="text" id="record-projects" name="record-projects"><br>
-
-        <label for="record-status">Status:</label>
-        <input type="text" id="record-status" name="record-status"><br>
-
-        <label for="record-flags">Flags:</label>
-        <input type="text" id="record-flags" name="record-flags"><br>
-
-        <label for="record-received-y">Received Year:</label>
-        <input type="text" id="record-received-y" name="record-received-y"><br>
-
-        <label for="record-received-m">Received Month:</label>
-        <input type="text" id="record-received-m" name="record-received-m"><br>
-
-        <label for="record-received-d">Received Day:</label>
-        <input type="text" id="record-received-d" name="record-received-d"><br>
     </div>
 
     <input type="submit" value="Submit">
 </form>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var sampleTypeSelect = document.getElementById('sample-type');
@@ -237,8 +230,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var hostDescrLabel = document.getElementById('host-descr-label');
     var recordAlleleInput = document.getElementById('record-allele-2');
     var alleleLabel = document.getElementById('allele-2-label');
-    var specimenSourceCulture = document.getElementById('specimen-source-culture')
-    var specimenSubstrate = document.getElementById('specimen-substrate')
+    var specimenSourceCulture = document.getElementById('specimen-source-culture');
+    var specimenSubstrate = document.getElementById('specimen-substrate');
+    var parentOneInput = document.getElementById('record-parent-1');
+    var parentOneLabel = document.getElementById('parent-1-label');
+    var parentTwoInput = document.getElementById('record-parent-2');
+    var parentTwoLabel = document.getElementById('parent-2-label');
+
 
     sampleTypeSelect.addEventListener('change', function() {
         if (sampleTypeSelect.value === 'select') {
@@ -307,6 +305,8 @@ document.addEventListener('DOMContentLoaded', function() {
             hostDescrLabel.style.display = 'none';
             specimenSourceCulture.style.display = 'none';
             specimenSubstrate.style.display = 'none';
+            parentOneInput.style.display = 'block';
+            parentOneLabel.style.display = 'block';
         } else {
             recordProviderInput.style.display = 'block';
             providerLabel.style.display = 'block';
@@ -326,9 +326,27 @@ document.addEventListener('DOMContentLoaded', function() {
             hostSpLabel.style.display = 'block';
             recordHostDescrInput.style.display = 'block';
             hostDescrLabel.style.display = 'block';
+            parentOneInput.style.display = 'none';
+            parentOneLabel.style.display = 'none';
         }
     }
 
+    recordTypeSelect.addEventListener('change', updateParentVisibility);
+
+    function updateParentVisibility() {
+        if (recordTypeSelect.value == 'cross') {
+            parentTwoInput.style.display = 'block';
+            parentTwoLabel.style.display = 'block';
+        } else if (recordTypeSelect.value == 'test-cross'){
+            parentTwoInput.style.display = 'block';
+            parentTwoLabel.style.display = 'block';
+        } else {
+            parentTwoInput.style.display = 'none';
+            parentTwoLabel.style.display = 'none';
+        }
+    }
+
+    
     sampleTypeSelect.dispatchEvent(new Event('change'));
     recordTypeSelect.dispatchEvent(new Event('change'));
     nuclearTypeSelect.dispatchEvent(new Event('change'));
