@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
     recordNuclearSelect.addEventListener('change', updateNuclearVisibility);
 
     function updateNuclearVisibility() {
-        if (recordTypeSelect.value !== 'dikaryon') {
+        if (recordNuclearSelect.value !== 'dikaryon') {
             recordAlleleInput.style.display = 'none';
             alleleLabel.style.display = 'none';
         } else {
