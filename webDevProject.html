@@ -157,7 +157,14 @@
         <input type="text" id="record-location" name="record-location"><br>
 
         <label for="record-stream" id="stream-label">Stream:</label>
-        <input type="text" id="record-stream" name="record-stream"><br>
+            <select id="record-stream">
+                <option value="select">(Select)</option>
+                <option value="emergent">emergent</option>
+                <option value="bank">bank</option>
+                <option value="floodplain">floodplain</option>
+                <option value="upland">upland</option>
+                <!-- Add more options for different streams as needed -->
+            </select><br>
 
         <label for="record-host-species" id="host-sp-label">Host Species:</label>
         <input type="text" id="record-host-species" name="record-host-species"><br>
