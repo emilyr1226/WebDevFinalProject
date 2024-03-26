@@ -25,12 +25,12 @@
         <input type="text" id="specimen-collector" name="specimen-collector"><br>
 
         <label for="specimen-print">Print:</label>
-        <label><input type="checkbox" id="specimen-print-spore-print" name="specimen-print" value="SporePrint">Contains Spore Print</label>
-        <label><input type="checkbox" id="specimen-print-no-spore-print" name="specimen-print" value="NoSporePrint">Does Not Contain Spore Print</label><br>
+        <label><input type="radio" id="specimen-print-spore-print" name="specimen-print" value="SporePrint">Contains Spore Print</label>
+        <label><input type="radio" id="specimen-print-no-spore-print" name="specimen-print" value="NoSporePrint">Does Not Contain Spore Print</label><br>
 
         <label for="specimen-specimen">Specimen:</label>
-        <label><input type="checkbox" id="specimen-specimen-mushroom" name="specimen-specimen" value="Mushroom">Contains Mushroom</label>
-        <label><input type="checkbox" id="specimen-specimen-no-mushroom" name="specimen-specimen" value="NoMushroom">Does Not Contain Mushroom</label> <br>
+        <label><input type="radio" id="specimen-specimen-mushroom" name="specimen-specimen" value="Mushroom">Contains Mushroom</label>
+        <label><input type="radio" id="specimen-specimen-no-mushroom" name="specimen-specimen" value="NoMushroom">Does Not Contain Mushroom</label> <br>
 
         <label for="specimen-hymenophore">Hymenophore: *</label>
          <select id="hymenophore-dropdown">
@@ -42,8 +42,8 @@
         </select><br>
 
         <label for="specimen-veil">Veil:</label>
-        <label><input type="checkbox" id="specimen-veil-partial" name="specimen-veil" value="PartialVeil">Partial Veil Present</label>
-        <label><input type="checkbox" id="specimen-veil-no-partial" name="specimen-veil" value="NoMushroom">No Partial Veil Present</label><br>
+        <label><input type="radio" id="specimen-veil-partial" name="specimen-veil" value="PartialVeil">Partial Veil Present</label>
+        <label><input type="radio" id="specimen-veil-no-partial" name="specimen-veil" value="NoMushroom">No Partial Veil Present</label><br>
 
         <label for="specimen-photos">Photos: *</label>
         <input type="file" id="specimen-photo-upload" name="photo-upload" accept="image/*" multiple><br>
