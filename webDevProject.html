@@ -32,6 +32,7 @@
         <label><input type="radio" id="specimen-specimen-mushroom" name="specimen-specimen" value="Mushroom">Contains Mushroom</label>
         <label><input type="radio" id="specimen-specimen-no-mushroom" name="specimen-specimen" value="NoMushroom">Does Not Contain Mushroom</label> <br>
 
+
         <label for="specimen-hymenophore">Hymenophore: *</label>
          <select id="hymenophore-dropdown">
             <option value="select">(Select)</option>
@@ -136,7 +137,7 @@
         <input type="text" id="record-provider" name="record-provider"><br>
 
         <label for="record-received-date">Received Date: *</label>
-        <input type="text" id="record-received-date" name="record-received-date"><br>
+        <input type="date" id="record-received-date" name="record-received-date"><br>
 
         <label for="record-link">Link:</label>
         <input type="text" id="record-link" name="record-link"><br>
@@ -157,7 +158,14 @@
         <input type="text" id="record-location" name="record-location"><br>
 
         <label for="record-stream" id="stream-label">Stream:</label>
-        <input type="text" id="record-stream" name="record-stream"><br>
+            <select id="record-stream">
+                <option value="select">(Select)</option>
+                <option value="emergent">emergent</option>
+                <option value="bank">bank</option>
+                <option value="floodplain">floodplain</option>
+                <option value="upland">upland</option>
+                <!-- Add more options for different streams as needed -->
+            </select><br>
 
         <label for="record-host-species" id="host-sp-label">Host Species:</label>
         <input type="text" id="record-host-species" name="record-host-species"><br>
@@ -203,7 +211,7 @@
         <input type="text" id="record-projects" name="record-projects"><br>
     </div>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" name="Submit" id="Submit">
 </form>
 
 <script>
@@ -317,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
             parentOneLabel.style.display = 'block';
         }
         // Hide source culture and substrate if not wild for Specimen
-        if (sampleTypeSelect.value == 'specimen') {
+        else if (sampleTypeSelect.value == 'specimen') {
             if (specimenCultivated.checked) {
                 sourceCultureInput.style.display = 'none';
                 sourceCultureLabel.style.display = 'none';
