@@ -21,15 +21,42 @@ function form_submission() {
         switch ($sample_type) {
             case 'specimen':
                 // Handle specimen form data insertion
-                $specimen_name = sanitize_text_field($_POST['specimen_-ame']);
-                $specimen_collector = sanitize_text_field($_POST['specimen-collector']);
-
+                $name = sanitize_text_field($_POST['specimen-field1']);
+                $specimen_name = sanitize_text_field($_POST['specimen-name']);
+                $collector = sanitize_text_field($_POST['specimen-collector']);
+                $print = sanitize_text_field($_POST['specimen-print']);
+                $specimen = sanitize_text_field($_POST['specimen-specimen']);
+                $hymenophore = sanitize_text_field($_POST['hymenophore-dropdown']);
+                $veil = sanitize_text_field($_POST['specimen-veil']);
+                $wild = sanitize_text_field($_POST['specimen-type']);
+                $source_culture = sanitize_text_field($_POST['specimen-source-culture']);
+                $substrate = sanitize_text_field($_POST['specimen-substrate']);
+                $fungarium = sanitize_text_field($_POST['specimen-fungarium']);
+                $print_fungarium = sanitize_text_field($_POST['specimen-print-fungarium']);
+                $notes = sanitize_text_field($_POST['notes-specimen']);
+                $date = sanitize_text_field($_POST['specimen-date'])
+                $fungarium_date = sanitize_text_field($_POST['fungarium-date'])
+                $float_float = sanitize_text_field($_POST['specimen-float-float'])
+                $float_sink = sanitize_text_field($_POST['specimen-float-sink'])
+                                
                 // Implement insertion logic for specimens table
                 $wpdb->insert(
                     'specimens',
                     array(
+                        'name' => $name,
                         'specimen_name' => $specimen_name,
-                        'specimen_collector' => $specimen_collector,
+                        'specimen_collector' => $collector,
+                        'print' => $print,
+                        'specimen' => $specimen,
+                        'hymenophore' => $hymenophore,
+                        'veil' => $veil,
+                        'source_culture' => $source_culture,
+                        'substrate' => $substrate,
+                        'specimen_fungarium' => $fungarium,
+                        'notes_specimen' => $notes,
+                        'fungarium_date' => $fungarium_date,
+                        'float_float' => $float_float,
+                        'float_sink' => $float_sink,
                         // Add more fields and values as needed
                     )
                 );
