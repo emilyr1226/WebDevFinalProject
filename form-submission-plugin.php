@@ -28,18 +28,41 @@ function form_submission() {
                 $specimen = sanitize_text_field($_POST['specimen-specimen']);
                 $hymenophore = sanitize_text_field($_POST['hymenophore-dropdown']);
                 $veil = sanitize_text_field($_POST['specimen-veil']);
-                $wild = sanitize_text_field($_POST['specimen-type']);
-                $source_culture = sanitize_text_field($_POST['specimen-source-culture']);
-                $substrate = sanitize_text_field($_POST['specimen-substrate']);
+                $wild = sanitize_text_field($_POST['specimen-type']);  
                 $fungarium = sanitize_text_field($_POST['specimen-fungarium']);
                 $print_fungarium = sanitize_text_field($_POST['specimen-print-fungarium']);
                 $notes = sanitize_text_field($_POST['notes-specimen']);
-                $date = sanitize_text_field($_POST['specimen-date'])
-                $fungarium_date = sanitize_text_field($_POST['fungarium-date'])
-                $float_float = sanitize_text_field($_POST['specimen-float-float'])
-                $float_sink = sanitize_text_field($_POST['specimen-float-sink'])
+                $date = sanitize_text_field($_POST['specimen-date']);
+                $fungarium_date = sanitize_text_field($_POST['fungarium-date']);
+                $float_float = sanitize_text_field($_POST['specimen-float-float']);
+                $float_sink = sanitize_text_field($_POST['specimen-float-sink']);
+
+                if ($wild == 'cultivated') {
+                    $source_culture = sanitize_text_field($_POST['specimen-source-culture']);
+                    $substrate = sanitize_text_field($_POST['specimen-substrate']);
+
+                    $wpdb->insert(
+                        'specimens',
+                        array(
+                            'name' => $name,
+                            'specimen_name' => $specimen_name,
+                            'specimen_collector' => $collector,
+                            'print' => $print,
+                            'specimen' => $specimen,
+                            'hymenophore' => $hymenophore,
+                            'veil' => $veil,
+                            'source_culture' => $source_culture,
+                            'substrate' => $substrate,
+                            'specimen_fungarium' => $fungarium,
+                            'notes_specimen' => $notes,
+                            'fungarium_date' => $fungarium_date,
+                            'float_float' => $float_float,
+                            'float_sink' => $float_sink,
+                        )
+                    );
+                    break;
+                }
                                 
-                // Implement insertion logic for specimens table
                 $wpdb->insert(
                     'specimens',
                     array(
@@ -50,18 +73,14 @@ function form_submission() {
                         'specimen' => $specimen,
                         'hymenophore' => $hymenophore,
                         'veil' => $veil,
-                        'source_culture' => $source_culture,
-                        'substrate' => $substrate,
                         'specimen_fungarium' => $fungarium,
                         'notes_specimen' => $notes,
                         'fungarium_date' => $fungarium_date,
                         'float_float' => $float_float,
                         'float_sink' => $float_sink,
-                        // Add more fields and values as needed
                     )
                 );
                 break;
-            $flags_culture = '';
             case 'culture':
                 // Handle culture form data insertion
                 $name = sanitize_text_field($_POST['name']);
