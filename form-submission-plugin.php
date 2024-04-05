@@ -166,7 +166,8 @@ function form_submission() {
                         );
                         break;
                     }
-                    $wpdb->insert(
+                    else {
+                        $wpdb->insert(
                             'records',
                             array(
                                 'species' => $species,
@@ -193,6 +194,7 @@ function form_submission() {
                             )
                         );
                         break;
+                    }
                 }
             
                 $selected_nuclear = sanitize_text_field($_POST['nuclear']);
