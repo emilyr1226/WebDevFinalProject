@@ -203,12 +203,94 @@ function form_submission() {
                 if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
                     $allele2 = sanitize_text_field($_POST['record-allele-2']);
                 }
-                if ($selected_type != 'wild' && isset($_POST['record-parent-1'])) {
+                elseif ($selected_type != 'wild' && isset($_POST['record-parent-1'])) {
                     $parent1 = sanitize_text_field($_POST['record-parent-1']);
+
+                    if ($selected_type == 'cross' || $selected_type == 'test-cross' && isset($_POST['record-parent-2'])) {
+                        $parent2 = sanitize_text_field($_POST['record-parent-2']);
+    
+                        if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
+                            $allele2 = sanitize_text_field($_POST['record-allele-2']);
+    
+                            $wpdb->insert(
+                                'records',
+                                array(
+                                    'species' => $species,
+                                    'name' => $name,
+                                    'received_date' => $received_date,
+                                    'link' => $link,
+                                    'type' => $selected_type, 
+                                    'selected_nuclear' => $selected_nuclear,
+                                    'allele1' => $allele1,
+                                    'allele2' => $allele2,
+                                    'parent1' => $parent1,
+                                    'parent2' => $parent2,                                    
+                                    'notes' => $notes, 
+                                    'projects' => $projects,
+                                )
+                            );
+                            break;
+                        }
+                        else{
+                            $wpdb->insert(
+                                'records',
+                                array(
+                                    'species' => $species,
+                                    'name' => $name,
+                                    'received_date' => $received_date,
+                                    'link' => $link,
+                                    'type' => $selected_type, 
+                                    'selected_nuclear' => $selected_nuclear,
+                                    'allele1' => $allele1,
+                                    'parent1' => $parent1,
+                                    'parent2' => $parent2,                                    
+                                    'notes' => $notes, 
+                                    'projects' => $projects,
+                                )
+                            );
+                            break;
+                        }
+                    if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
+                        $allele2 = sanitize_text_field($_POST['record-allele-2']);
+
+                        $wpdb->insert(
+                            'records',
+                            array(
+                                'species' => $species,
+                                'name' => $name,
+                                'received_date' => $received_date,
+                                'link' => $link,
+                                'type' => $selected_type, 
+                                'selected_nuclear' => $selected_nuclear,
+                                'allele1' => $allele1,
+                                'allele2' => $allele2,
+                                'parent1' => $parent1,
+                                'notes' => $notes, 
+                                'projects' => $projects,
+                            )
+                        );
+                        break;
+                    else{
+                        $wpdb->insert(
+                            'records',
+                            array(
+                                'species' => $species,
+                                'name' => $name,
+                                'received_date' => $received_date,
+                                'link' => $link,
+                                'type' => $selected_type, 
+                                'selected_nuclear' => $selected_nuclear,
+                                'allele1' => $allele1,
+                                'parent1' => $parent1,
+                                'notes' => $notes, 
+                                'projects' => $projects,
+                            )
+                        );
+                        break;
+                    }
+                    }
                 }
-                if ($selected_type === 'cross' || $selected_type === 'test-cross' && isset($_POST['record-parent-2'])) {
-                    $parent2 = sanitize_text_field($_POST['record-parent-2']);
-                }
+
                 $notes = sanitize_text_field($_POST['record-notes']);
                 $projects = sanitize_text_field($_POST['record-projects']);
 
@@ -222,24 +304,16 @@ function form_submission() {
                         'received_date' => $received_date,
                         'link' => $link,
                         'type' => $selected_type, 
-                        'provider' => $provider,
-                        'lat' => $lat,
-                        'long' => $long,
-                        'accuracy' => $accuracy,
-                        'locality' => $locality,
-                        'location' => $location,
-                        'stream' => $stream, 
-                        'host_species' => $host_species,
-                        'host_descr' => $host_descr,
                         'selected_nuclear' => $selected_nuclear,
                         'allele1' => $allele1,
-                        'allele2' => $allele2,
                         'parent1' => $parent1,
-                        'parent2' => $parent2,
                         'notes' => $notes, 
                         'projects' => $projects,
                     )
                 );
+                break;
+            default:
+                // Handle default case
                 break;
             default:
                 // Handle default case
