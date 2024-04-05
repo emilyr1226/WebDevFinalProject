@@ -125,6 +125,8 @@ function form_submission() {
                 $received_date = sanitize_text_field($_POST['record-received-date']);
                 $link = sanitize_text_field($_POST['record-link']);
                 $selected_type = sanitize_text_field($_POST['record_type']);
+                $selected_nuclear = sanitize_text_field($_POST['nuclear']);
+                $allele1 = sanitize_text_field($_POST['allele-1']);
                  // Only shows up when type is wild
                if ($selected_type =='wild' && isset($_POST['record-provider'])) {
                     $provider = sanitize_text_field($_POST['record-provider']);
@@ -136,7 +138,7 @@ function form_submission() {
                     $stream = sanitize_text_field($_POST['record-stream']);
                     $host_species = sanitize_text_field($_POST['record-host-species']);
                     $host_descr = sanitize_text_field($_POST['record-host-descr']);
-                    elseif ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
+                    if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
                         $allele2 = sanitize_text_field($_POST['record-allele-2']);
                         $wpdb->insert(
                             'records',
@@ -196,9 +198,6 @@ function form_submission() {
                         break;
                     }
                 }
-            
-                $selected_nuclear = sanitize_text_field($_POST['nuclear']);
-                $allele1 = sanitize_text_field($_POST['allele-1']);
             
                 elseif ($selected_type != 'wild' && isset($_POST['record-parent-1'])) {
                     $parent1 = sanitize_text_field($_POST['record-parent-1']);
@@ -267,6 +266,8 @@ function form_submission() {
                             )
                         );
                         break;
+                    }
+                        
                     else{
                         $wpdb->insert(
                             'records',
@@ -308,9 +309,6 @@ function form_submission() {
                         'projects' => $projects,
                     )
                 );
-                break;
-            default:
-                // Handle default case
                 break;
             default:
                 // Handle default case
