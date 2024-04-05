@@ -126,7 +126,7 @@ function form_submission() {
                 $link = sanitize_text_field($_POST['record-link']);
                 $selected_type = sanitize_text_field($_POST['record_type']);
                  // Only shows up when type is wild
-           if ($selected_type =='wild' && isset($_POST['record-provider'])) {
+               if ($selected_type =='wild' && isset($_POST['record-provider'])) {
                     $provider = sanitize_text_field($_POST['record-provider']);
                     $lat = sanitize_text_field($_POST['record-lat']);
                     $long = sanitize_text_field($_POST['record-long']);
