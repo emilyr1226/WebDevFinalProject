@@ -507,7 +507,12 @@ function form_submission() {
 				
                 break;
         }
+		$thank_you_page_url = home_url('/submitted-successfully/'); // Change '/thank-you' to the actual URL or slug of your thank you page
+    	wp_redirect($thank_you_page_url);
+    	exit();
+
     }
+
 }
 add_action('init', 'form_submission');
 
