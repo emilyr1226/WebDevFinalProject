@@ -117,7 +117,8 @@ function form_submission() {
                     )
                 );
                 break;
-           case 'record':
+            
+            case 'record':
                 // Handle record form data insertion
                 $species = sanitize_text_field($_POST['record-species']);
                 $name = sanitize_text_field($_POST['record-name']);
@@ -125,7 +126,7 @@ function form_submission() {
                 $link = sanitize_text_field($_POST['record-link']);
                 $selected_type = sanitize_text_field($_POST['record_type']);
                  // Only shows up when type is wild
-                if ($selected_type === 'wild' && isset($_POST['record-provider'])) {
+                else if ($selected_type =='wild' && isset($_POST['record-provider'])) {
                     $provider = sanitize_text_field($_POST['record-provider']);
                     $lat = sanitize_text_field($_POST['record-lat']);
                     $long = sanitize_text_field($_POST['record-long']);
@@ -135,9 +136,68 @@ function form_submission() {
                     $stream = sanitize_text_field($_POST['record-stream']);
                     $host_species = sanitize_text_field($_POST['record-host-species']);
                     $host_descr = sanitize_text_field($_POST['record-host-descr']);
+                    if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
+                        $allele2 = sanitize_text_field($_POST['record-allele-2']);
+                        $wpdb->insert(
+                            'records',
+                            array(
+                                'species' => $species,
+                                'name' => $name,
+                                'received_date' => $received_date,
+                                'link' => $link,
+                                'type' => $selected_type, 
+                                'provider' => $provider,
+                                'lat' => $lat,
+                                'long' => $long,
+                                'accuracy' => $accuracy,
+                                'locality' => $locality,
+                                'location' => $location,
+                                'stream' => $stream, 
+                                'host_species' => $host_species,
+                                'host_descr' => $host_descr,
+                                'selected_nuclear' => $selected_nuclear,
+                                'allele1' => $allele1,
+                                'allele2' => $allele2,
+                                'parent1' => $parent1,
+                                'parent2' => $parent2,
+                                'notes' => $notes, 
+                                'projects' => $projects,
+                            )
+                        );
+                        break;
+                    }
+                    $wpdb->insert(
+                            'records',
+                            array(
+                                'species' => $species,
+                                'name' => $name,
+                                'received_date' => $received_date,
+                                'link' => $link,
+                                'type' => $selected_type, 
+                                'provider' => $provider,
+                                'lat' => $lat,
+                                'long' => $long,
+                                'accuracy' => $accuracy,
+                                'locality' => $locality,
+                                'location' => $location,
+                                'stream' => $stream, 
+                                'host_species' => $host_species,
+                                'host_descr' => $host_descr,
+                                'selected_nuclear' => $selected_nuclear,
+                                'allele1' => $allele1,
+                                'allele2' => $allele2,
+                                'parent1' => $parent1,
+                                'parent2' => $parent2,
+                                'notes' => $notes, 
+                                'projects' => $projects,
+                            )
+                        );
+                        break;
                 }
+            
                 $selected_nuclear = sanitize_text_field($_POST['nuclear']);
                 $allele1 = sanitize_text_field($_POST['allele-1']);
+            
                 if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
                     $allele2 = sanitize_text_field($_POST['record-allele-2']);
                 }
