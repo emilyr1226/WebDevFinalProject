@@ -32,8 +32,12 @@ function form_submission() {
                 $fungarium = sanitize_text_field($_POST['specimen-fungarium']);
                 $print_fungarium = sanitize_text_field($_POST['specimen-print-fungarium']);
                 $notes = sanitize_text_field($_POST['notes-specimen']);
-                $date = sanitize_text_field($_POST['specimen-date']);
-                $fungarium_date = sanitize_text_field($_POST['fungarium-date']);
+                $date_mm_dd_yyyy = $_POST['specimen-date'];
+                $date_yyyy_mm_dd = date('Y-m-d', strtotime($date_mm_dd_yyyy));
+                $date = sanitize_text_field($date_yyyy_mm_dd);
+                $fung_date_mm_dd_yyyy = $_POST['fungarium-date'];
+                $fung_date_yyyy_mm_dd = date('Y-m-d', strtotime($fung_date_mm_dd_yyyy));
+                $fungarium_date = sanitize_text_field($fung_date_yyyy_mm_dd);
                 $float_float = sanitize_text_field($_POST['specimen-float-float']);
                 $float_sink = sanitize_text_field($_POST['specimen-float-sink']);
 
@@ -86,10 +90,15 @@ function form_submission() {
                 $name = sanitize_text_field($_POST['name']);
                 $culture_name = sanitize_text_field($_POST['culture-name']);
                 $culture_collector = sanitize_text_field($_POST['culture-collector']);
-                $culture_date = sanitize_text_field($_POST['culture-date']);
+                $cul_date_mm_dd_yyyy = $_POST['culture-date'];
+                $cul_date_yyyy_mm_dd = date('Y-m-d', strtotime($cul_date_mm_dd_yyyy));
+                $culture_date = sanitize_text_field($cul_date_yyyy_mm_dd);
                 $culture_media = sanitize_text_field($_POST['culture-media']);
                 $culture_location = sanitize_text_field($_POST['culture-location']);
                 $culture_location_date = sanitize_text_field($_POST['culture-location-date']);
+                $loc_date_mm_dd_yyyy = $_POST['culture-location-date'];
+                $loc_date_yyyy_mm_dd = date('Y-m-d', strtotime($loc_date_mm_dd_yyyy));
+                $culture_location_date = sanitize_text_field($loc_date_yyyy_mm_dd);
                 $notes_culture = sanitize_text_field($_POST['notes-culture']);
                 $culture_transfer_from = sanitize_text_field($_POST['culture-transfer-from']);
                 // Implement insertion logic for cultures table
