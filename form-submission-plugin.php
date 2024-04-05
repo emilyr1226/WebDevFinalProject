@@ -200,9 +200,6 @@ function form_submission() {
                 $selected_nuclear = sanitize_text_field($_POST['nuclear']);
                 $allele1 = sanitize_text_field($_POST['allele-1']);
             
-                if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
-                    $allele2 = sanitize_text_field($_POST['record-allele-2']);
-                }
                 elseif ($selected_type != 'wild' && isset($_POST['record-parent-1'])) {
                     $parent1 = sanitize_text_field($_POST['record-parent-1']);
 
