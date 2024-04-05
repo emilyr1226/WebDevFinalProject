@@ -126,7 +126,7 @@ function form_submission() {
                 $link = sanitize_text_field($_POST['record-link']);
                 $selected_type = sanitize_text_field($_POST['record_type']);
                  // Only shows up when type is wild
-                else if ($selected_type =='wild' && isset($_POST['record-provider'])) {
+           if ($selected_type =='wild' && isset($_POST['record-provider'])) {
                     $provider = sanitize_text_field($_POST['record-provider']);
                     $lat = sanitize_text_field($_POST['record-lat']);
                     $long = sanitize_text_field($_POST['record-long']);
@@ -136,7 +136,7 @@ function form_submission() {
                     $stream = sanitize_text_field($_POST['record-stream']);
                     $host_species = sanitize_text_field($_POST['record-host-species']);
                     $host_descr = sanitize_text_field($_POST['record-host-descr']);
-                    if ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
+                    elseif ($selected_nuclear == 'dikaryon' && isset($_POST['record-allele-2'])) {
                         $allele2 = sanitize_text_field($_POST['record-allele-2']);
                         $wpdb->insert(
                             'records',
