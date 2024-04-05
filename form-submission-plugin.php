@@ -26,7 +26,7 @@ function form_submission() {
                 $collector = sanitize_text_field($_POST['specimen-collector']);
                 $print = sanitize_text_field($_POST['specimen-print']);
                 $specimen = sanitize_text_field($_POST['specimen-specimen']);
-                $hymenophore = sanitize_text_field($_POST['hymenophore-dropdown']);
+                $hymenophore = sanitize_key($_POST['hymenophore-dropdown']);
                 $veil = sanitize_text_field($_POST['specimen-veil']);
                 $wild = sanitize_text_field($_POST['specimen-type']);  
                 $fungarium = sanitize_text_field($_POST['specimen-fungarium']);
