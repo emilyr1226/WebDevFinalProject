@@ -1,6 +1,6 @@
-<form>
+<form method="post">
     <label for="sample-type">Select Type of Data:</label>
-    <select id="sample-type">
+    <select id="sample-type" name="sample-type">
         <option value="select">(Select)</option>
         <option value="specimen">Specimen</option>
         <option value="culture">Culture</option>
@@ -210,7 +210,7 @@
         <label for="record-projects">Projects:</label>
         <input type="text" id="record-projects" name="record-projects"><br>
     </div>
-
+    <input type="hidden" name="action" value="custom_form_submission">
     <input type="submit" value="Submit" name="Submit" id="Submit">
 </form>
 
