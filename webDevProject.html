@@ -1,7 +1,7 @@
 <form method="post">
     <label for="sample-type">Select Type of Data:</label>
     <select id="sample-type" name="sample-type">
-        <option value="select">(Select)</option>
+        <option value="">(Select)</option>
         <option value="specimen">Specimen</option>
         <option value="culture">Culture</option>
         <option value="record">Record</option>
@@ -25,17 +25,22 @@
         <input type="text" id="specimen-collector" name="specimen-collector"><br>
 
         <label for="specimen-print">Print:</label>
-        <label><input type="radio" id="specimen-print-spore-print" name="specimen-print" value="SporePrint">Contains Spore Print</label>
-        <label><input type="radio" id="specimen-print-no-spore-print" name="specimen-print" value="NoSporePrint">Does Not Contain Spore Print</label><br>
+        <select id="specimen-print">
+            <option value="">(Select)</option>
+            <option value="True">Contains Spore Print</option>
+            <option value="False">Does Not Contain Spore Print</option>
+        </select><br>
 
         <label for="specimen-specimen">Specimen:</label>
-        <label><input type="radio" id="specimen-specimen-mushroom" name="specimen-specimen" value="Mushroom">Contains Mushroom</label>
-        <label><input type="radio" id="specimen-specimen-no-mushroom" name="specimen-specimen" value="NoMushroom">Does Not Contain Mushroom</label> <br>
-
+        <select id="specimen-specimen">
+            <option value="">(Select)</option>
+            <option value="True">Contains Mushroom</option>
+            <option value="False">Does Not Contain Mushroom</option>
+        </select><br>
 
         <label for="specimen-hymenophore">Hymenophore: *</label>
          <select id="hymenophore-dropdown">
-            <option value="select">(Select)</option>
+            <option value="">(Select)</option>
             <option value="agaricoid">Agaricoid</option>
             <option value="secotioid">Secotioid</option>
             <option value="intermediate">Intermediate</option>
@@ -43,15 +48,21 @@
         </select><br>
 
         <label for="specimen-veil">Veil:</label>
-        <label><input type="radio" id="specimen-veil-partial" name="specimen-veil" value="PartialVeil">Partial Veil Present</label>
-        <label><input type="radio" id="specimen-veil-no-partial" name="specimen-veil" value="NoMushroom">No Partial Veil Present</label><br>
+        <select id="specimen-veil">
+            <option value="">(Select)</option>
+            <option value="True">Partial Veil Present</option>
+            <option value="False">No Partial Veil Present</option>
+        </select><br>
 
         <label for="specimen-photos">Photos: *</label>
         <input type="file" id="specimen-photo-upload" name="photo-upload" accept="image/*" multiple><br>
 
         <label for="specimen-wild-cultivated">Wild or Cultivated:</label>
-        <input type="radio" id="specimen-wild" name="specimen-type" value="wild"><label for="specimen-wild">Wild</label>
-        <input type="radio" id="specimen-cultivated" name="specimen-type" value="cultivated"><label for="specimen-cultivated">Cultivated</label><br>
+        <select id="specimen-wild-cultivated">
+            <option value="">(Select)</option>
+            <option value="wild">Wild</option>
+            <option value="cultivated">Cultivated</option>
+        </select><br>
 
         <label for="specimen-source-culture" id="source-culture-label">Source Culture: *</label>
         <input type="text" id="specimen-source-culture" name="specimen-source-culture"><br>
@@ -159,7 +170,7 @@
 
         <label for="record-stream" id="stream-label">Stream:</label>
             <select id="record-stream">
-                <option value="select">(Select)</option>
+                <option value="">(Select)</option>
                 <option value="emergent">emergent</option>
                 <option value="bank">bank</option>
                 <option value="floodplain">floodplain</option>
@@ -182,15 +193,15 @@
 
         <label for="allele-1">Allele 1:</label>
             <select id="allele-1">
-                <option value="select">(Select)</option>
+                <option value="">(Select)</option>
                 <option value="aga">aga</option>
                 <option value="sec">sec</option>
                 <!-- Add more options for different alleles as needed -->
             </select><br>
 
-        <label for="allele-2" id="allele-2-label">Allele 2:</label>
+        <label for="record-allele-2" id="allele-2-label">Allele 2:</label>
             <select id="record-allele-2">
-                <option value="select">(Select)</option>
+                <option value="">(Select)</option>
                 <option value="aga">aga</option>
                 <option value="sec">sec</option>
                 <!-- Add more options for different alleles as needed -->
