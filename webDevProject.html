@@ -64,11 +64,15 @@
             <option value="cultivated">Cultivated</option>
         </select><br>
 
-        <label for="specimen-source-culture" id="source-culture-label">Source Culture: *</label>
-        <input type="text" id="specimen-source-culture" name="specimen-source-culture"><br>
+        <div id ="specimen-source-culture-div">
+            <label for="specimen-source-culture" id="source-culture-label">Source Culture: *</label>
+            <input type="text" id="specimen-source-culture" name="specimen-source-culture"><br>
+        </div>
 
-        <label for="specimen-substrate" id="substrate-label">Substrate: *</label>
-        <input type="text" id="specimen-substrate" name="specimen-substrate"><br>
+        <div id="specimen-substrate-div">
+            <label for="specimen-substrate" id="substrate-label">Substrate: *</label>
+            <input type="text" id="specimen-substrate" name="specimen-substrate"><br>
+        </div>
 
         <label for="specimen-fungarium">Specimen Fungarium: *</label>
         <input type="text" id="specimen-fungarium" name="specimen-fungarium"><br>
@@ -135,85 +139,108 @@
 
         <label for="type">Type: *</label>
             <select id="record-type">
-                <option value="wild">wild</option>
-                <option value="tissue-culture">tissue culture</option>
+                <option value="wild">Wild</option>
+                <option value="tissue-culture">Tissue Culture</option>
                 <option value="SSI">SSI</option>
-                <option value="cross">cross</option>
-                <option value="test-cross">test cross</option>
-                <option value="culture">culture</option>
+                <option value="cross">Cross</option>
+                <option value="test-cross">Test Cross</option>
+                <option value="culture">Culture</option>
                 <!-- Add more options for different types as needed -->
             </select><br>
 
-        <label for="record-provider" id="provider-label">Provider:</label>
-        <input type="text" id="record-provider" name="record-provider"><br>
+        <div id="record-provider-div">
+            <label for="record-provider" id="provider-label">Provider:</label>
+            <input type="text" id="record-provider" name="record-provider"><br>
+        </div>
 
         <label for="record-received-date">Received Date: *</label>
         <input type="date" id="record-received-date" name="record-received-date"><br>
 
         <label for="record-link">Link:</label>
         <input type="text" id="record-link" name="record-link"><br>
+        
+        <div id="record-lat-div">
+            <label for="record-lat" id="lat-label">Latitude: *</label>
+            <input type="text" id="record-lat" name="record-lat"><br>
+        </div>
 
-        <label for="record-lat" id="lat-label">Latitude: *</label>
-        <input type="text" id="record-lat" name="record-lat"><br>
+        <div id="record-long-div">
+            <label for="record-long" id="long-label">Longitude: *</label>
+            <input type="text" id="record-long" name="record-long"><br>
+        </div>
 
-        <label for="record-long" id="long-label">Longitude: *</label>
-        <input type="text" id="record-long" name="record-long"><br>
+        
+        <div id="record-accuracy-div">
+            <label for="record-accuracy" id="accuracy-label">Accuracy:</label>
+            <input type="text" id="record-accuracy" name="record-accuracy"><br>
+        </div>
 
-        <label for="record-accuracy" id="accuracy-label">Accuracy:</label>
-        <input type="text" id="record-accuracy" name="record-accuracy"><br>
+        <div id="record-locality-div">
+            <label for="record-locality" id="local-label">Locality: *</label>
+            <input type="text" id="record-locality" name="record-locality"><br>
+        </div>
 
-        <label for="record-locality" id="local-label">Locality: *</label>
-        <input type="text" id="record-locality" name="record-locality"><br>
+        <div id="record-location-div">
+            <label for="record-location" id="location-label">Location:</label>
+            <input type="text" id="record-location" name="record-location"><br>
+        </div>
 
-        <label for="record-location" id="location-label">Location:</label>
-        <input type="text" id="record-location" name="record-location"><br>
-
+        <div id="record-stream-div">
         <label for="record-stream" id="stream-label">Stream:</label>
             <select id="record-stream">
                 <option value="">(Select)</option>
-                <option value="emergent">emergent</option>
-                <option value="bank">bank</option>
-                <option value="floodplain">floodplain</option>
-                <option value="upland">upland</option>
+                <option value="emergent">Emergent</option>
+                <option value="bank">Bank</option>
+                <option value="floodplain">Floodplain</option>
+                <option value="upland">Upland</option>
                 <!-- Add more options for different streams as needed -->
             </select><br>
+        </div>
 
-        <label for="record-host-species" id="host-sp-label">Host Species:</label>
-        <input type="text" id="record-host-species" name="record-host-species"><br>
+        <div id="record-host-species-div">
+            <label for="record-host-species" id="host-sp-label">Host Species:</label>
+            <input type="text" id="record-host-species" name="record-host-species"><br>
+        </div>
 
-        <label for="record-host-descr" id="host-descr-label">Host Description:</label>
-        <input type="text" id="record-host-descr" name="record-host-descr"><br>
+        <div id="record-host-descr-div">
+            <label for="record-host-descr" id="host-descr-label">Host Description:</label>
+            <input type="text" id="record-host-descr" name="record-host-descr"><br>
+        </div>
 
         <label for="type">Nuclear: *</label>
             <select id="nuclear">
-                <option value="monokaryon">monokaryon</option>
-                <option value="dikaryon">dikaryon</option>
+                <option value="monokaryon">Monokaryon</option>
+                <option value="dikaryon">Dikaryon</option>
                 <!-- Add more options for different statuses as needed -->
             </select><br>
 
         <label for="allele-1">Allele 1:</label>
             <select id="allele-1">
                 <option value="">(Select)</option>
-                <option value="aga">aga</option>
-                <option value="sec">sec</option>
+                <option value="aga">Aga</option>
+                <option value="sec">Sec</option>
                 <!-- Add more options for different alleles as needed -->
             </select><br>
 
-        <label for="record-allele-2" id="allele-2-label">Allele 2:</label>
-            <select id="record-allele-2">
-                <option value="">(Select)</option>
-                <option value="aga">aga</option>
-                <option value="sec">sec</option>
-                <!-- Add more options for different alleles as needed -->
-            </select><br>
+        <div id="record-allele-2-div">
+            <label for="record-allele-2" id="allele-2-label">Allele 2:</label>
+                <select id="record-allele-2">
+                    <option value="">(Select)</option>
+                    <option value="aga">Aga</option>
+                    <option value="sec">Sec</option>
+                    <!-- Add more options for different alleles as needed -->
+                </select><br>
+        </div>
 
+        <div id="record-parent-1-div">
+            <label for="record-parent-1" id="parent-1-label">Parent 1: *</label>
+            <input type="text" id="record-parent-1" name="record-parent-1"><br>
+        </div>
 
-
-        <label for="record-parent-1" id="parent-1-label">Parent 1: *</label>
-        <input type="text" id="record-parent-1" name="record-parent-1"><br>
-
-        <label for="record-parent-2" id="parent-2-label">Parent 2: *</label>
-        <input type="text" id="record-parent-2" name="record-parent-2"><br>
+        <div id="record-parent-2-div">
+            <label for="record-parent-2" id="parent-2-label">Parent 2: *</label>
+            <input type="text" id="record-parent-2" name="record-parent-2"><br>
+        </div>
 
         <label for="record-notes">Notes:</label>
         <input type="text" id="record-notes" name="record-notes"><br>
@@ -234,36 +261,22 @@ document.addEventListener('DOMContentLoaded', function() {
     var recordTextBoxes = document.getElementById('record-textboxes');
     var recordTypeSelect = document.getElementById('record-type');
     var recordNuclearSelect = document.getElementById('nuclear');
-    var recordProviderInput = document.getElementById('record-provider');
-    var providerLabel = document.getElementById('provider-label');
-    var recordLatInput = document.getElementById('record-lat');
-    var latLabel = document.getElementById('lat-label');
-    var recordLongInput = document.getElementById('record-long');
-    var longLabel = document.getElementById('long-label');
-    var recordAccuInput = document.getElementById('record-accuracy');
-    var accuLabel = document.getElementById('accuracy-label');
-    var recordLocalInput = document.getElementById('record-locality');
-    var localLabel = document.getElementById('local-label');
-    var recordLocationInput = document.getElementById('record-location');
-    var locationLabel = document.getElementById('location-label');
-    var recordStreamInput = document.getElementById('record-stream');
-    var streamLabel = document.getElementById('stream-label');
-    var recordHostSpInput = document.getElementById('record-host-species');
-    var hostSpLabel = document.getElementById('host-sp-label');
-    var recordHostDescrInput = document.getElementById('record-host-descr');
-    var hostDescrLabel = document.getElementById('host-descr-label');
-    var recordAlleleInput = document.getElementById('record-allele-2');
-    var alleleLabel = document.getElementById('allele-2-label');
-    var parentOneInput = document.getElementById('record-parent-1');
-    var parentOneLabel = document.getElementById('parent-1-label');
-    var parentTwoInput = document.getElementById('record-parent-2');
-    var parentTwoLabel = document.getElementById('parent-2-label');
-    var sourceCultureInput = document.getElementById('specimen-source-culture');
-    var sourceCultureLabel = document.getElementById('source-culture-label');
-    var substrateInput = document.getElementById('specimen-substrate');
-    var substrateLabel = document.getElementById('substrate-label');
-    var specimenCultivated = document.getElementById('specimen-cultivated');
-    var specimenWild = document.getElementById('specimen-wild');
+    var recordProviderDiv = document.getElementById('record-provider-div');
+    var recordLatDiv = document.getElementById('record-lat-div');
+    var recordLongDiv = document.getElementById('record-long=div');
+    var recordAccuDiv = document.getElementById('record-accuracy-div');
+    var recordLocalDiv = document.getElementById('record-locality-div');;
+    var recordLocationDiv = document.getElementById('record-location-div');
+    var recordStreamDiv = document.getElementById('record-stream-div');
+    var recordHostSpDiv = document.getElementById('record-host-species-div');
+    var recordHostDescrDiv = document.getElementById('record-host-descr-div');
+    var recordAlleleDiv = document.getElementById('record-allele-2-div');
+    var parentOneDiv = document.getElementById('record-parent-1-div');
+    var parentTwoDiv = document.getElementById('record-parent-2-div');
+    var sourceCultureDiv = document.getElementById('specimen-source-culture-div');
+    var substrateDiv = document.getElementById('specimen-substrate-div');
+    var specimenCultivatedWild = document.getElementById('specimen-wild-cultivated');
+
 
     sampleTypeSelect.addEventListener('change', function() {
         if (sampleTypeSelect.value === 'select') {
@@ -300,77 +313,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateNuclearVisibility() {
         if (recordNuclearSelect.value !== 'dikaryon') {
-            recordAlleleInput.style.display = 'none';
-            alleleLabel.style.display = 'none';
+            recordAlleleDiv.style.display = 'none';
         } else {
-            recordAlleleInput.style.display = 'block';
-            alleleLabel.style.display = 'block';
+            recordAlleleDiv.style.display = 'block';
         }
     }
     recordTypeSelect.addEventListener('change', updateWildVisibility);
-    specimenCultivated.addEventListener('change', updateWildVisibility);
-    specimenWild.addEventListener('change', updateWildVisibility);         
+    specimenCultivatedWild.addEventListener('change', updateWildVisibility);       
 
     function updateWildVisibility() {
         // Hide provider box if Type is not wild for Record
         if (recordTypeSelect.value !== 'wild') {
-            recordProviderInput.style.display = 'none';
-            providerLabel.style.display = 'none';
-            recordLatInput.style.display = 'none';
-            latLabel.style.display = 'none';
-            recordLongInput.style.display = 'none';
-            longLabel.style.display = 'none';
-            recordAccuInput.style.display = 'none';
-            accuLabel.style.display = 'none';
-            recordLocalInput.style.display = 'none';
-            localLabel.style.display = 'none';
-            recordLocationInput.style.display = 'none';
-            locationLabel.style.display = 'none';
-            recordStreamInput.style.display = 'none';
-            streamLabel.style.display = 'none';
-            recordHostSpInput.style.display = 'none';
-            hostSpLabel.style.display = 'none';
-            recordHostDescrInput.style.display = 'none';
-            hostDescrLabel.style.display = 'none';
-            parentOneInput.style.display = 'block';
-            parentOneLabel.style.display = 'block';
+            recordProviderDiv.style.display = 'none';
+            recordLatDiv.style.display = 'none';
+            recordLongDiv.style.display = 'none';
+            recordAccuDiv.style.display = 'none';
+            recordLocalDiv.style.display = 'none';
+            recordLocationDiv.style.display = 'none';
+            recordStreamDiv.style.display = 'none';
+            recordHostSpDiv.style.display = 'none';
+            recordHostDescrDiv.style.display = 'none';
+            parentOneDiv.style.display = 'block';
         }
         // Hide source culture and substrate if not wild for Specimen
         else if (sampleTypeSelect.value == 'specimen') {
-            if (specimenCultivated.checked) {
-                sourceCultureInput.style.display = 'none';
-                sourceCultureLabel.style.display = 'none';
-                substrateInput.style.display = 'none';
-                substrateLabel.style.display = 'none';
+            if (specimenCultivatedWild.value == 'cultivated') {
+                sourceCultureDiv.style.display = 'none';
+                substrateDiv.style.display = 'none';
             } 
-            else if (specimenWild.checked) {
-                sourceCultureInput.style.display = 'block';
-                sourceCultureLabel.style.display = 'block';
-                substrateInput.style.display = 'block';
-                substrateLabel.style.display = 'block';
+            else {
+                sourceCultureDiv.style.display = 'block';
+                substrateDiv.style.display = 'block';
             }
         }
         else {
-            recordProviderInput.style.display = 'block';
-            providerLabel.style.display = 'block';
-            recordLatInput.style.display = 'block';
-            latLabel.style.display = 'block';
-            recordLongInput.style.display = 'block';
-            longLabel.style.display = 'block';
-            recordAccuInput.style.display = 'block';
-            accuLabel.style.display = 'block';
-            recordLocalInput.style.display = 'block';
-            localLabel.style.display = 'block';
-            recordLocationInput.style.display = 'block';
-            locationLabel.style.display = 'block';
-            recordStreamInput.style.display = 'block';
-            streamLabel.style.display = 'block';
-            recordHostSpInput.style.display = 'block';
-            hostSpLabel.style.display = 'block';
-            recordHostDescrInput.style.display = 'block';
-            hostDescrLabel.style.display = 'block';
-            parentOneInput.style.display = 'none';
-            parentOneLabel.style.display = 'none';
+            recordProviderDiv.style.display = 'block';
+            recordLatDiv.style.display = 'block';
+            recordLongDiv.style.display = 'block';
+            recordAccuDiv.style.display = 'block';
+            recordLocalDiv.style.display = 'block';
+            recordLocationDiv.style.display = 'block';
+            recordStreamDiv.style.display = 'block';
+            recordHostSpDiv.style.display = 'block';
+            recordHostDescrDiv.style.display = 'block';
+            parentOneDiv.style.display = 'none';
         }
     }
 
@@ -378,14 +364,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateParentVisibility() {
         if (recordTypeSelect.value == 'cross') {
-            parentTwoInput.style.display = 'block';
-            parentTwoLabel.style.display = 'block';
+            parentTwoDiv.style.display = 'block';
         } else if (recordTypeSelect.value == 'test-cross'){
-            parentTwoInput.style.display = 'block';
-            parentTwoLabel.style.display = 'block';
+            parentTwoDiv.style.display = 'block';
         } else {
-            parentTwoInput.style.display = 'none';
-            parentTwoLabel.style.display = 'none';
+            parentTwoDiv.style.display = 'none';
         }
     }
 
@@ -393,7 +376,6 @@ document.addEventListener('DOMContentLoaded', function() {
     sampleTypeSelect.dispatchEvent(new Event('change'));
     recordTypeSelect.dispatchEvent(new Event('change'));
     recordNuclearSelect.dispatchEvent(new Event('change'));
-    specimenCultivated.dispatchEvent(new Event('change'));
-    specimenWild.dispatchEvent(new Event('change'));
+    specimenCultivatedWild.dispatchEvent(new Event('change'));
 });
 </script>
