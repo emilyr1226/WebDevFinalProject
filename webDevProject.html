@@ -1,4 +1,4 @@
-<form method="post">
+<form method="post" style="text-align: center;">
     <label for="sample-type">Select Type of Data:</label>
     <select id="sample-type" name="sample-type">
         <option value="">(Select)</option>
@@ -152,7 +152,7 @@
             <label for="record-provider" id="provider-label">Provider:</label>
             <input type="text" id="record-provider" name="record-provider"><br>
         </div>
-
+        
         <label for="record-received-date">Received Date: *</label>
         <input type="date" id="record-received-date" name="record-received-date"><br>
 
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var recordNuclearSelect = document.getElementById('nuclear');
     var recordProviderDiv = document.getElementById('record-provider-div');
     var recordLatDiv = document.getElementById('record-lat-div');
-    var recordLongDiv = document.getElementById('record-long=div');
+    var recordLongDiv = document.getElementById('record-long-div');
     var recordAccuDiv = document.getElementById('record-accuracy-div');
     var recordLocalDiv = document.getElementById('record-locality-div');;
     var recordLocationDiv = document.getElementById('record-location-div');
@@ -276,7 +276,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var sourceCultureDiv = document.getElementById('specimen-source-culture-div');
     var substrateDiv = document.getElementById('specimen-substrate-div');
     var specimenCultivatedWild = document.getElementById('specimen-wild-cultivated');
-
 
     sampleTypeSelect.addEventListener('change', function() {
         if (sampleTypeSelect.value === 'select') {
@@ -323,18 +322,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateWildVisibility() {
         // Hide provider box if Type is not wild for Record
-        if (recordTypeSelect.value !== 'wild') {
-            recordProviderDiv.style.display = 'none';
-            recordLatDiv.style.display = 'none';
-            recordLongDiv.style.display = 'none';
-            recordAccuDiv.style.display = 'none';
-            recordLocalDiv.style.display = 'none';
-            recordLocationDiv.style.display = 'none';
-            recordStreamDiv.style.display = 'none';
-            recordHostSpDiv.style.display = 'none';
-            recordHostDescrDiv.style.display = 'none';
-            parentOneDiv.style.display = 'block';
+        if (sampleTypeSelect.value == 'record') {
+            if (recordTypeSelect.value == 'wild') {
+                recordProviderDiv.style.display = 'block';
+                recordLatDiv.style.display = 'block';
+                recordLongDiv.style.display = 'block';
+                recordAccuDiv.style.display = 'block';
+                recordLocalDiv.style.display = 'block';
+                recordLocationDiv.style.display = 'block';
+                recordStreamDiv.style.display = 'block';
+                recordHostSpDiv.style.display = 'block';
+                recordHostDescrDiv.style.display = 'block';
+                parentOneDiv.style.display = 'none';
+
+            }
+            else {
+                recordProviderDiv.style.display = 'none';
+                recordLatDiv.style.display = 'none';
+                recordLongDiv.style.display = 'none';
+                recordAccuDiv.style.display = 'none';
+                recordLocalDiv.style.display = 'none';
+                recordLocationDiv.style.display = 'none';
+                recordStreamDiv.style.display = 'none';
+                recordHostSpDiv.style.display = 'none';
+                recordHostDescrDiv.style.display = 'none';
+                parentOneDiv.style.display = 'block';
+            }
         }
+
         // Hide source culture and substrate if not wild for Specimen
         else if (sampleTypeSelect.value == 'specimen') {
             if (specimenCultivatedWild.value == 'cultivated') {
@@ -345,18 +360,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 sourceCultureDiv.style.display = 'block';
                 substrateDiv.style.display = 'block';
             }
-        }
-        else {
-            recordProviderDiv.style.display = 'block';
-            recordLatDiv.style.display = 'block';
-            recordLongDiv.style.display = 'block';
-            recordAccuDiv.style.display = 'block';
-            recordLocalDiv.style.display = 'block';
-            recordLocationDiv.style.display = 'block';
-            recordStreamDiv.style.display = 'block';
-            recordHostSpDiv.style.display = 'block';
-            recordHostDescrDiv.style.display = 'block';
-            parentOneDiv.style.display = 'none';
         }
     }
 
