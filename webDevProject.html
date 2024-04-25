@@ -19,27 +19,27 @@
         <input type="text" id="specimen-field1" name="specimen-field1"><br>
 
         <label for="specimen-name">Specimen Name *:</label>
-        <input type="text" id="specimen-name" name="specimen-name"><br>
+        <input type="text" id="specimen-name" name="specimen-name"><br> 
 
         <label for="specimen-collector">Collector *:</label>
         <input type="text" id="specimen-collector" name="specimen-collector"><br>
 
         <label for="specimen-print">Print:</label>
-        <select id="specimen-print" name="specimen-print">
+        <select id="specimen-print">
             <option value="">(Select)</option>
             <option value="True">Contains Spore Print</option>
             <option value="False">Does Not Contain Spore Print</option>
         </select><br>
 
         <label for="specimen-specimen">Specimen:</label>
-        <select id="specimen-specimen" name="specimen-specimen">
+        <select id="specimen-specimen">
             <option value="">(Select)</option>
             <option value="True">Contains Mushroom</option>
             <option value="False">Does Not Contain Mushroom</option>
         </select><br>
 
-        <label for="hymenophore-dropdown">Hymenophore: *</label>
-         <select id="hymenophore-dropdown" name="hymenophore-dropdown">
+        <label for="specimen-hymenophore">Hymenophore: *</label>
+         <select id="hymenophore-dropdown">
             <option value="">(Select)</option>
             <option value="agaricoid">Agaricoid</option>
             <option value="secotioid">Secotioid</option>
@@ -48,17 +48,17 @@
         </select><br>
 
         <label for="specimen-veil">Veil:</label>
-        <select id="specimen-veil" name="specimen-veil">
+        <select id="specimen-veil">
             <option value="">(Select)</option>
             <option value="True">Partial Veil Present</option>
             <option value="False">No Partial Veil Present</option>
         </select><br>
 
         <label for="specimen-photos">Photos: *</label>
-        <input type="file" id="specimen-photo-upload" name="photo-upload" accept="image/*" multiple><br>
+        <input type="text" id="specimen-photo-upload" name="photo-upload"><br>
 
         <label for="specimen-wild-cultivated">Wild or Cultivated:</label>
-        <select id="specimen-wild-cultivated" name="specimen-wild-cultivated">
+        <select id="specimen-wild-cultivated">
             <option value="">(Select)</option>
             <option value="wild">Wild</option>
             <option value="cultivated">Cultivated</option>
@@ -87,10 +87,10 @@
         <input type="date" id="fungarium-date" name="fungarium-date"><br>
 
         <label for="specimen-float-float">Number Floating:</label>
-        <input type="text" id="specimen-float-float" name="specimen-float-float"><br>
+        <input type="numeric" step="any" id="specimen-float-float" name="specimen-float-float"><br>
 
         <label for="specimen-float-sink">Number Sinking:</label>
-        <input type="text" id="specimen-float-sink" name="specimen-float-sink"><br>
+        <input type="numberic" step="any" id="specimen-float-sink" name="specimen-float-sink"><br>
     </div>
 
     <div id="culture-textboxes" style="display: none;">
@@ -107,7 +107,7 @@
         <input type="date" id="culture-date" name="culture-date"><br>
 
         <label for="culture-photos">Photos:</label>
-        <input type="file" id="culture-photo-upload" name="photo-upload" accept="image/*" multiple><br>
+        <input type="text" id="culture-photo-upload" name="photo-upload"><br>
 
         <label for="culture-media">Media: *</label>
         <input type="text" id="culture-media" name="culture-media" value="MYA"><br>
@@ -135,7 +135,8 @@
         <input type="text" id="record-name" name="record-name"><br>
 
         <label for="type">Type: *</label>
-            <select id="record-type" name="record-type">
+            <select id="record-type">
+                <option value="">(Select)</option>
                 <option value="wild">Wild</option>
                 <option value="tissue-culture">Tissue Culture</option>
                 <option value="SSI">SSI</option>
@@ -149,7 +150,7 @@
             <label for="record-provider" id="provider-label">Provider:</label>
             <input type="text" id="record-provider" name="record-provider"><br>
         </div>
-
+        
         <label for="record-received-date">Received Date: *</label>
         <input type="date" id="record-received-date" name="record-received-date"><br>
 
@@ -158,12 +159,12 @@
         
         <div id="record-lat-div">
             <label for="record-lat" id="lat-label">Latitude: *</label>
-            <input type="text" id="record-lat" name="record-lat"><br>
+            <input type="numeric" step="any" id="record-lat" name="record-lat"><br>
         </div>
 
         <div id="record-long-div">
             <label for="record-long" id="long-label">Longitude: *</label>
-            <input type="text" id="record-long" name="record-long"><br>
+            <input type="numeric" step="any" id="record-long" name="record-long"><br>
         </div>
 
         
@@ -184,7 +185,7 @@
 
         <div id="record-stream-div">
         <label for="record-stream" id="stream-label">Stream:</label>
-            <select id="record-stream" name="record-stream">
+            <select id="record-stream">
                 <option value="">(Select)</option>
                 <option value="emergent">Emergent</option>
                 <option value="bank">Bank</option>
@@ -204,15 +205,16 @@
             <input type="text" id="record-host-descr" name="record-host-descr"><br>
         </div>
 
-        <label for="nuclear">Nuclear: *</label>
-            <select id="nuclear" name="nuclear">
+        <label for="type">Nuclear: *</label>
+            <select id="nuclear">
+                <option value="">(Select)</option>
                 <option value="monokaryon">Monokaryon</option>
                 <option value="dikaryon">Dikaryon</option>
                 <!-- Add more options for different statuses as needed -->
             </select><br>
 
         <label for="allele-1">Allele 1:</label>
-            <select id="allele-1" name="allele-1">
+            <select id="allele-1">
                 <option value="">(Select)</option>
                 <option value="aga">Aga</option>
                 <option value="sec">Sec</option>
@@ -221,7 +223,7 @@
 
         <div id="record-allele-2-div">
             <label for="record-allele-2" id="allele-2-label">Allele 2:</label>
-                <select id="record-allele-2" name="record-allele-2">
+                <select id="record-allele-2">
                     <option value="">(Select)</option>
                     <option value="aga">Aga</option>
                     <option value="sec">Sec</option>
@@ -254,15 +256,42 @@ document.addEventListener('DOMContentLoaded', function() {
     var sampleTypeSelect = document.getElementById('sample-type');
     var selectTextBoxes = document.getElementById('select-textboxes');
     var specimenTextBoxes = document.getElementById('specimen-textboxes');
+    var name1 = document.getElementById('specimen-field1');
+    var specimenName = document.getElementById('specimen-name');
+    var specimenCollector = document.getElementById('specimen-collector');
+    var specimenHymenophore = document.getElementById('hymenophore-dropdown');
+    var specimenPhotos = document.getElementById('specimen-photo-upload');
+    var specimenSourceCulture = document.getElementById('specimen-source-culture');
+    var specimenSubstrate = document.getElementById('specimen-substrate');
+    var specimenFungarium = document.getElementById('specimen-fungarium');
+    var specimenDate = document.getElementById('specimen-date');
+    var fungariumDate = document.getElementById('fungarium-date')
+    var sourceCultureDiv = document.getElementById('specimen-source-culture-div');
+    var substrateDiv = document.getElementById('specimen-substrate-div');
+    var specimenCultivatedWild = document.getElementById('specimen-wild-cultivated');
     var cultureTextBoxes = document.getElementById('culture-textboxes');
+    var name2 = document.getElementById('name');
+    var cultureName = document.getElementById('culture-name');
+    var cultureDate = document.getElementById('culture-date');
+    var cultureMedia = document.getElementById('culture-media');
+    var cultureLocation = document.getElementById('culture-location');
+    var cultureLocDate = document.getElementById('culture-location-date');
     var recordTextBoxes = document.getElementById('record-textboxes');
     var recordTypeSelect = document.getElementById('record-type');
     var recordNuclearSelect = document.getElementById('nuclear');
+    var recordSpecies = document.getElementById('record-species');
+    var recordName = document.getElementById('record-name');
+    var recordReceivedDate = document.getElementById('record-received-date');
+    var recordLatitute = document.getElementById('record-lat');
+    var recordLongitude = document.getElementById('record-long');
+    var recordLocality = document.getElementById('record-locality');
+    var recordParentOne = document.getElementById('record-parent-1');
+    var recordParentTwo = document.getElementById('record-parent-2');
     var recordProviderDiv = document.getElementById('record-provider-div');
     var recordLatDiv = document.getElementById('record-lat-div');
     var recordLongDiv = document.getElementById('record-long-div');
     var recordAccuDiv = document.getElementById('record-accuracy-div');
-    var recordLocalDiv = document.getElementById('record-locality-div');;
+    var recordLocalDiv = document.getElementById('record-locality-div');
     var recordLocationDiv = document.getElementById('record-location-div');
     var recordStreamDiv = document.getElementById('record-stream-div');
     var recordHostSpDiv = document.getElementById('record-host-species-div');
@@ -270,10 +299,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var recordAlleleDiv = document.getElementById('record-allele-2-div');
     var parentOneDiv = document.getElementById('record-parent-1-div');
     var parentTwoDiv = document.getElementById('record-parent-2-div');
-    var sourceCultureDiv = document.getElementById('specimen-source-culture-div');
-    var substrateDiv = document.getElementById('specimen-substrate-div');
-    var specimenCultivatedWild = document.getElementById('specimen-wild-cultivated');
-
 
     sampleTypeSelect.addEventListener('change', function() {
         if (sampleTypeSelect.value === 'select') {
@@ -281,23 +306,65 @@ document.addEventListener('DOMContentLoaded', function() {
             specimenTextBoxes.style.display = 'none';
             cultureTextBoxes.style.display = 'none';
             recordTextBoxes.style.display = 'none';
+
         } else if (sampleTypeSelect.value === 'specimen') {
             selectTextBoxes.style.display = 'none';
             specimenTextBoxes.style.display = 'block';
             cultureTextBoxes.style.display = 'none';
             recordTextBoxes.style.display = 'none';
+            sourceCultureDiv.style.display = 'none';
+            substrateDiv.style.display = 'none';
+            name1.setAttribute("required", "");
+            specimenName.setAttribute("required", "");
+            specimenCollector.setAttribute("required", "");
+            specimenHymenophore.setAttribute("required", "");
+            specimenPhotos.setAttribute("required", "");
+            specimenFungarium.setAttribute("required", "");
+            specimenDate.setAttribute("required", "");
+            fungariumDate.setAttribute("required", "");
 
         } else if (sampleTypeSelect.value === 'culture') {
             selectTextBoxes.style.display = 'none';
             specimenTextBoxes.style.display = 'none';
             cultureTextBoxes.style.display = 'block';
             recordTextBoxes.style.display = 'none';
+            name2.setAttribute("required", "");
+            cultureName.setAttribute("required", "");
+            cultureDate.setAttribute("required", "");
+            cultureMedia.setAttribute("required", "");
+            cultureLocation.setAttribute("required", "");
+            cultureLocDate.setAttribute("required", "");
+
         } else if (sampleTypeSelect.value === 'record') {
             selectTextBoxes.style.display = 'none';
             specimenTextBoxes.style.display = 'none';
             cultureTextBoxes.style.display = 'none';
             recordTextBoxes.style.display = 'block';
+            recordLatDiv.style.display = 'none';
+            recordLongDiv.style.display = 'none';
+            recordLatDiv.style.display = 'none';
+            recordLongDiv.style.display = 'none';
+            recordAccuDiv.style.display = 'none';
+            recordLocalDiv.style.display = 'none';
+            recordLocationDiv.style.display = 'none';
+            recordStreamDiv.style.display = 'none';
+            recordHostSpDiv.style.display = 'none';
+            recordHostDescrDiv.style.display = 'none';
+            parentOneDiv.style.display = 'block';
+            recordLocalDiv.style.display = 'none';
+            recordLocationDiv.style.display = 'none';
+            recordStreamDiv.style.display = 'none';
+            recordHostSpDiv.style.display = 'none';
+            recordHostDescrDiv.style.display = 'none';
+            parentOneDiv.style.display = 'none';
+            parentTwoDiv.style.display = 'none';
+            recordSpecies.setAttribute("required", "");
+            recordName.setAttribute("required", "");
+            recordTypeSelect.setAttribute("required", "");
+            recordReceivedDate.setAttribute("required", "");
+            recordNuclearSelect.setAttribute("required", "");
             updateProviderVisibility();
+
         } else {
             selectTextBoxes.style.display = 'none';
             specimenTextBoxes.style.display = 'none';
@@ -324,9 +391,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (recordTypeSelect.value == 'wild') {
                 recordProviderDiv.style.display = 'block';
                 recordLatDiv.style.display = 'block';
+                recordLatitute.setAttribute("required", "");
                 recordLongDiv.style.display = 'block';
+                recordLongitude.setAttribute("required", "");
                 recordAccuDiv.style.display = 'block';
                 recordLocalDiv.style.display = 'block';
+                recordLocality.setAttribute("required", "");
                 recordLocationDiv.style.display = 'block';
                 recordStreamDiv.style.display = 'block';
                 recordHostSpDiv.style.display = 'block';
@@ -345,6 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 recordHostSpDiv.style.display = 'none';
                 recordHostDescrDiv.style.display = 'none';
                 parentOneDiv.style.display = 'block';
+                recordParentOne.setAttribute("required", "");
             }
         }
 
@@ -356,7 +427,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } 
             else {
                 sourceCultureDiv.style.display = 'block';
+                specimenSourceCulture.setAttribute("required", "");
                 substrateDiv.style.display = 'block';
+                specimenSubstrate.setAttribute("required", "");
             }
         }
     }
@@ -366,17 +439,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateParentVisibility() {
         if (recordTypeSelect.value == 'cross') {
             parentTwoDiv.style.display = 'block';
+            recordParentTwo.setAttribute("required", "");
         } else if (recordTypeSelect.value == 'test-cross'){
             parentTwoDiv.style.display = 'block';
+            recordParentTwo.setAttribute("required", "");
         } else {
             parentTwoDiv.style.display = 'none';
         }
-    }
-
-    
+    }   
     sampleTypeSelect.dispatchEvent(new Event('change'));
     recordTypeSelect.dispatchEvent(new Event('change'));
     recordNuclearSelect.dispatchEvent(new Event('change'));
     specimenCultivatedWild.dispatchEvent(new Event('change'));
 });
+
 </script>
