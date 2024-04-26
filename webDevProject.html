@@ -1,256 +1,292 @@
-<form method="post">
-    <label for="sample-type">Select Type of Data:</label>
-    <select id="sample-type" name="sample-type">
-        <option value="">(Select)</option>
-        <option value="specimen">Specimen</option>
-        <option value="culture">Culture</option>
-        <option value="record">Record</option>
-        <!-- Add more options for different sample types as needed -->
-    </select>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
 
-    <p> * indicates required fields </p>
+        .w3-text{
+            float: left
+        }
+        .w3-container label{
+            margin-right: 10px;
+            color: #283b5d !important;
+        }
+        .w3-input {
+            display: block; 
+            overflow: hidden; 
+            padding: 0px 4px 0px 6px; 
+            width: 200px; /* Adjust width as needed */
+            margin-bottom: 5px;
+        }
 
-    <div id="select-textboxes">
-        <!-- Add content for select here if needed -->
+        .w3-select {
+            width: 200px; /* Adjust width as needed */
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class = "w3-card-4">
+    <div class="w3-container w3-blue-grey" style="text-align: center;">
+        <h1 class="w3-text-white"><b>Data Input</b></h1>
     </div>
-
-    <div id="specimen-textboxes" style="display: none;">
-        <label for="specimen-field1">Name: *</label>
-        <input type="text" id="specimen-field1" name="specimen-field1"><br>
-
-        <label for="specimen-name">Specimen Name *:</label>
-        <input type="text" id="specimen-name" name="specimen-name"><br> 
-
-        <label for="specimen-collector">Collector *:</label>
-        <input type="text" id="specimen-collector" name="specimen-collector"><br>
-
-        <label for="specimen-print">Print:</label>
-        <select id="specimen-print">
+    <br>
+    <form class="w3-container" method="post">
+        <label class="w3-text-blue-grey" for="sample-type">Select Type of Data:</label>
+        <select class="w3-select w3-border w3-white" id="sample-type" name="sample-type">
             <option value="">(Select)</option>
-            <option value="True">Contains Spore Print</option>
-            <option value="False">Does Not Contain Spore Print</option>
-        </select><br>
+            <option value="specimen">Specimen</option>
+            <option value="culture">Culture</option>
+            <option value="record">Record</option>
+            <!-- Add more options for different sample types as needed -->
+        </select>
 
-        <label for="specimen-specimen">Specimen:</label>
-        <select id="specimen-specimen">
-            <option value="">(Select)</option>
-            <option value="True">Contains Mushroom</option>
-            <option value="False">Does Not Contain Mushroom</option>
-        </select><br>
+        <p><label class="w3-text"> * indicates required fields </label></p><br><br>
 
-        <label for="specimen-hymenophore">Hymenophore: *</label>
-         <select id="hymenophore-dropdown">
-            <option value="">(Select)</option>
-            <option value="agaricoid">Agaricoid</option>
-            <option value="secotioid">Secotioid</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="poroid">Poroid</option>
-        </select><br>
-
-        <label for="specimen-veil">Veil:</label>
-        <select id="specimen-veil">
-            <option value="">(Select)</option>
-            <option value="True">Partial Veil Present</option>
-            <option value="False">No Partial Veil Present</option>
-        </select><br>
-
-        <label for="specimen-photos">Photos: *</label>
-        <input type="text" id="specimen-photo-upload" name="photo-upload"><br>
-
-        <label for="specimen-wild-cultivated">Wild or Cultivated:</label>
-        <select id="specimen-wild-cultivated">
-            <option value="">(Select)</option>
-            <option value="wild">Wild</option>
-            <option value="cultivated">Cultivated</option>
-        </select><br>
-
-        <div id ="specimen-source-culture-div">
-            <label for="specimen-source-culture" id="source-culture-label">Source Culture: *</label>
-            <input type="text" id="specimen-source-culture" name="specimen-source-culture"><br>
+        <div id="select-textboxes">
+            <!-- Add content for select here if needed -->
         </div>
 
-        <div id="specimen-substrate-div">
-            <label for="specimen-substrate" id="substrate-label">Substrate: *</label>
-            <input type="text" id="specimen-substrate" name="specimen-substrate"><br>
-        </div>
+        <div id="specimen-textboxes" style="display: none;">
+            <label class="w3-text" for="specimen-field1">Name: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="specimen-field1" name="specimen-field1">
 
-        <label for="specimen-fungarium">Specimen Fungarium: *</label>
-        <input type="text" id="specimen-fungarium" name="specimen-fungarium"><br>
+            <label class="w3-text" for="specimen-name">Specimen Name: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="specimen-name" name="specimen-name"> 
 
-        <label for="notes-specimen">Notes Specimen:</label>
-        <input type="text" id="notes-specimen" name="notes-specimen"><br>
+            <label class="w3-text" for="specimen-collector">Collector: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="specimen-collector" name="specimen-collector">
 
-        <label for="specimen-date">Specimen Date: *</label>
-        <input type="date" id="specimen-date" name="specimen-date"><br>
+            <label class="w3-text" for="specimen-print">Print:</label>
+            <select class="w3-select w3-border w3-white" id="specimen-print">
+                <option value="">(Select)</option>
+                <option value="True">Contains Spore Print</option>
+                <option value="False">Does Not Contain Spore Print</option>
+            </select><br>
 
-        <label for="specimen-fungarium-date">Fungarium Date: *</label>
-        <input type="date" id="fungarium-date" name="fungarium-date"><br>
+            <label class="w3-text" for="specimen-specimen">Specimen:</label>
+            <select class="w3-select w3-border w3-white" id="specimen-specimen">
+                <option value="">(Select)</option>
+                <option value="True">Contains Mushroom</option>
+                <option value="False">Does Not Contain Mushroom</option>
+            </select><br>
 
-        <label for="specimen-float-float">Number Floating:</label>
-        <input type="numeric" step="any" id="specimen-float-float" name="specimen-float-float"><br>
+            <label class="w3-text" for="specimen-hymenophore">Hymenophore: *</label>
+             <select class="w3-select w3-border w3-white" id="hymenophore-dropdown">
+                <option value="">(Select)</option>
+                <option value="agaricoid">Agaricoid</option>
+                <option value="secotioid">Secotioid</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="poroid">Poroid</option>
+            </select><br>
 
-        <label for="specimen-float-sink">Number Sinking:</label>
-        <input type="numberic" step="any" id="specimen-float-sink" name="specimen-float-sink"><br>
-    </div>
+            <label class="w3-text" for="specimen-veil">Veil:</label>
+            <select class="w3-select w3-border w3-white" id="specimen-veil">
+                <option value="">(Select)</option>
+                <option value="True">Partial Veil Present</option>
+                <option value="False">No Partial Veil Present</option>
+            </select><br>
 
-    <div id="culture-textboxes" style="display: none;">
-        <label for="name">Name: *</label>
-        <input type="text" id="name" name="name"><br>
+            <label class="w3-text" for="specimen-photos">Photos: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="specimen-photo-upload" name="photo-upload">
 
-        <label for="culture-name">Culture Name: *</label>
-        <input type="text" id="culture-name" name="culture-name"><br>
-
-        <label for="culture-collector">Collector:</label>
-        <input type="text" id="culture-collector" name="culture-collector"><br>
-
-        <label for="culture-date">Culture Date: *</label>
-        <input type="date" id="culture-date" name="culture-date"><br>
-
-        <label for="culture-photos">Photos:</label>
-        <input type="text" id="culture-photo-upload" name="photo-upload"><br>
-
-        <label for="culture-media">Media: *</label>
-        <input type="text" id="culture-media" name="culture-media" value="MYA"><br>
-
-        <label for="culture-location">Culture Location: *</label>
-        <input type="text" id="culture-location" name="culture-location"><br>
-
-        <label for="culture-location-date">Culture Location Date: *</label>
-        <input type="date" id="culture-location-date" name="culture-location-date"><br>
-
-        <label for="notes-culture">Notes Culture:</label>
-        <input type="text" id="notes-culture" name="notes-culture"><br>
-
-        <label for="culture-transfer-from">Transfer From:</label>
-        <input type="text" id="culture-transfer-from" name="culture-transfer-from"><br>
-
-
-    </div>
-
-    <div id="record-textboxes" style="display: none;">
-        <label for="record-species">Species: *</label>
-        <input type="text" id="record-species" name="record-species"><br>
-
-        <label for="record-name">Name: *</label>
-        <input type="text" id="record-name" name="record-name"><br>
-
-        <label for="type">Type: *</label>
-            <select id="record-type">
+            <label class="w3-text" for="specimen-wild-cultivated">Wild or Cultivated:</label>
+            <select class="w3-select w3-border w3-white" id="specimen-wild-cultivated">
                 <option value="">(Select)</option>
                 <option value="wild">Wild</option>
-                <option value="tissue-culture">Tissue Culture</option>
-                <option value="SSI">SSI</option>
-                <option value="cross">Cross</option>
-                <option value="test-cross">Test Cross</option>
-                <option value="culture">Culture</option>
-                <!-- Add more options for different types as needed -->
+                <option value="cultivated">Cultivated</option>
             </select><br>
 
-        <div id="record-provider-div">
-            <label for="record-provider" id="provider-label">Provider:</label>
-            <input type="text" id="record-provider" name="record-provider"><br>
-        </div>
-        
-        <label for="record-received-date">Received Date: *</label>
-        <input type="date" id="record-received-date" name="record-received-date"><br>
+            <div id ="specimen-source-culture-div">
+                <label class="w3-text" for="specimen-source-culture" id="source-culture-label">Source Culture: *</label>
+                <input class="w3-input w3-border w3-white" type="text" id="specimen-source-culture" name="specimen-source-culture">
+            </div>
 
-        <label for="record-link">Link:</label>
-        <input type="text" id="record-link" name="record-link"><br>
-        
-        <div id="record-lat-div">
-            <label for="record-lat" id="lat-label">Latitude: *</label>
-            <input type="numeric" step="any" id="record-lat" name="record-lat"><br>
-        </div>
+            <div id="specimen-substrate-div">
+                <label class="w3-text" for="specimen-substrate" id="substrate-label">Substrate: *</label>
+                <input class="w3-input w3-border w3-white" type="text" id="specimen-substrate" name="specimen-substrate">
+            </div>
 
-        <div id="record-long-div">
-            <label for="record-long" id="long-label">Longitude: *</label>
-            <input type="numeric" step="any" id="record-long" name="record-long"><br>
-        </div>
+            <label class="w3-text" for="specimen-fungarium">Specimen Fungarium: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="specimen-fungarium" name="specimen-fungarium">
 
-        
-        <div id="record-accuracy-div">
-            <label for="record-accuracy" id="accuracy-label">Accuracy:</label>
-            <input type="text" id="record-accuracy" name="record-accuracy"><br>
-        </div>
+            <label class="w3-text" for="notes-specimen">Notes Specimen:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="notes-specimen" name="notes-specimen">
 
-        <div id="record-locality-div">
-            <label for="record-locality" id="local-label">Locality: *</label>
-            <input type="text" id="record-locality" name="record-locality"><br>
+            <label class="w3-text" for="specimen-date">Specimen Date: *</label>
+            <input class="w3-input w3-border w3-white" type="date" id="specimen-date" name="specimen-date">
+
+            <label class="w3-text" for="specimen-fungarium-date">Fungarium Date: *</label>
+            <input class="w3-input w3-border w3-white" type="date" id="fungarium-date" name="fungarium-date">
+
+            <label class="w3-text" for="specimen-float-float">Number Floating:</label>
+            <input class="w3-input w3-border w3-white" type="numeric" step="any" id="specimen-float-float" name="specimen-float-float">
+
+            <label class="w3-text" for="specimen-float-sink">Number Sinking:</label>
+            <input class="w3-input w3-border w3-white"type="numeric" step="any" id="specimen-float-sink" name="specimen-float-sink">
         </div>
 
-        <div id="record-location-div">
-            <label for="record-location" id="location-label">Location:</label>
-            <input type="text" id="record-location" name="record-location"><br>
+        <div id="culture-textboxes" style="display: none;">
+            <label class="w3-text" for="name">Name: * </label>
+            <input class="w3-input w3-border w3-white" type="text" id="name" name="name">
+
+            <label class="w3-text" for="culture-name">Culture Name: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="culture-name" name="culture-name">
+
+            <label class="w3-text" for="culture-collector">Collector:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="culture-collector" name="culture-collector">
+
+            <label class="w3-text" for="culture-date">Culture Date: *</label>
+            <input class="w3-input w3-border w3-white" type="date" id="culture-date" name="culture-date">
+
+            <label class="w3-text" for="culture-photos">Photos:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="culture-photo-upload" name="photo-upload">
+
+            <label class="w3-text" for="culture-media">Media: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="culture-media" name="culture-media" value="MYA">
+
+            <label class="w3-text" for="culture-location">Culture Location: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="culture-location" name="culture-location">
+
+            <label class="w3-text" for="culture-location-date">Culture Location Date: *</label>
+            <input class="w3-input w3-border w3-white" type="date" id="culture-location-date" name="culture-location-date">
+
+            <label class="w3-text" for="notes-culture">Notes Culture:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="notes-culture" name="notes-culture">
+
+            <label class="w3-text" for="culture-transfer-from">Transfer From:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="culture-transfer-from" name="culture-transfer-from">
+
+
         </div>
 
-        <div id="record-stream-div">
-        <label for="record-stream" id="stream-label">Stream:</label>
-            <select id="record-stream">
-                <option value="">(Select)</option>
-                <option value="emergent">Emergent</option>
-                <option value="bank">Bank</option>
-                <option value="floodplain">Floodplain</option>
-                <option value="upland">Upland</option>
-                <!-- Add more options for different streams as needed -->
-            </select><br>
-        </div>
+        <div id="record-textboxes" style="display: none;">
+            <label class="w3-text" for="record-species">Species: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="record-species" name="record-species">
 
-        <div id="record-host-species-div">
-            <label for="record-host-species" id="host-sp-label">Host Species:</label>
-            <input type="text" id="record-host-species" name="record-host-species"><br>
-        </div>
+            <label class="w3-text" for="record-name">Name: *</label>
+            <input class="w3-input w3-border w3-white" type="text" id="record-name" name="record-name">
 
-        <div id="record-host-descr-div">
-            <label for="record-host-descr" id="host-descr-label">Host Description:</label>
-            <input type="text" id="record-host-descr" name="record-host-descr"><br>
-        </div>
+            <label class="w3-text" for="type">Type: *</label>
+                <select class="w3-select w3-border w3-white" id="record-type">
+                    <option value="">(Select)</option>
+                    <option value="wild">Wild</option>
+                    <option value="tissue-culture">Tissue Culture</option>
+                    <option value="SSI">SSI</option>
+                    <option value="cross">Cross</option>
+                    <option value="test-cross">Test Cross</option>
+                    <option value="culture">Culture</option>
+                    <!-- Add more options for different types as needed -->
+                </select><br>
 
-        <label for="type">Nuclear: *</label>
-            <select id="nuclear">
-                <option value="">(Select)</option>
-                <option value="monokaryon">Monokaryon</option>
-                <option value="dikaryon">Dikaryon</option>
-                <!-- Add more options for different statuses as needed -->
-            </select><br>
+            <div id="record-provider-div">
+                <label class="w3-text" for="record-provider" id="provider-label">Provider:</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-provider" name="record-provider">
+            </div>
+            
+            <label class="w3-text" for="record-received-date">Received Date: *</label>
+            <input class="w3-input w3-border w3-white" type="date" id="record-received-date" name="record-received-date">
 
-        <label for="allele-1">Allele 1:</label>
-            <select id="allele-1">
-                <option value="">(Select)</option>
-                <option value="aga">Aga</option>
-                <option value="sec">Sec</option>
-                <!-- Add more options for different alleles as needed -->
-            </select><br>
+            <label class="w3-text" for="record-link">Link:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="record-link" name="record-link">
+            
+            <div id="record-lat-div">
+                <label class="w3-text" for="record-lat" id="lat-label">Latitude: *</label>
+                <input class="w3-input w3-border w3-white" type="numeric" step="any" id="record-lat" name="record-lat">
+            </div>
 
-        <div id="record-allele-2-div">
-            <label for="record-allele-2" id="allele-2-label">Allele 2:</label>
-                <select id="record-allele-2">
+            <div id="record-long-div">
+                <label class="w3-text" for="record-long" id="long-label">Longitude: *</label>
+                <input class="w3-input w3-border w3-white" type="numeric" step="any" id="record-long" name="record-long">
+            </div>
+
+            
+            <div id="record-accuracy-div">
+                <label class="w3-text" for="record-accuracy" id="accuracy-label">Accuracy:</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-accuracy" name="record-accuracy">
+            </div>
+
+            <div id="record-locality-div">
+                <label class="w3-text" for="record-locality" id="local-label">Locality: *</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-locality" name="record-locality">
+            </div>
+
+            <div id="record-location-div">
+                <label class="w3-text" for="record-location" id="location-label">Location:</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-location" name="record-location">
+            </div>
+
+            <div id="record-stream-div">
+            <label class="w3-text" for="record-stream" id="stream-label">Stream:</label>
+                <select class="w3-select w3-border w3-white" id="record-stream">
+                    <option value="">(Select)</option>
+                    <option value="emergent">Emergent</option>
+                    <option value="bank">Bank</option>
+                    <option value="floodplain">Floodplain</option>
+                    <option value="upland">Upland</option>
+                    <!-- Add more options for different streams as needed -->
+                </select><br>
+            </div>
+
+            <div id="record-host-species-div">
+                <label class="w3-text" for="record-host-species" id="host-sp-label">Host Species:</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-host-species" name="record-host-species">
+            </div>
+
+            <div id="record-host-descr-div">
+                <label class="w3-text" for="record-host-descr" id="host-descr-label">Host Description:</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-host-descr" name="record-host-descr">
+            </div>
+
+            <label class="w3-text" for="type">Nuclear: *</label>
+                <select class="w3-select w3-border w3-white" id="nuclear">
+                    <option value="">(Select)</option>
+                    <option value="monokaryon">Monokaryon</option>
+                    <option value="dikaryon">Dikaryon</option>
+                    <!-- Add more options for different statuses as needed -->
+                </select><br>
+
+            <label class="w3-text" for="allele-1">Allele 1:</label>
+                <select class="w3-select w3-border w3-white" id="allele-1">
                     <option value="">(Select)</option>
                     <option value="aga">Aga</option>
                     <option value="sec">Sec</option>
                     <!-- Add more options for different alleles as needed -->
                 </select><br>
+
+            <div id="record-allele-2-div">
+                <label class="w3-text" for="record-allele-2" id="allele-2-label">Allele 2:</label>
+                    <select class="w3-select w3-border w3-white" id="record-allele-2">
+                        <option value="">(Select)</option>
+                        <option value="aga">Aga</option>
+                        <option value="sec">Sec</option>
+                        <!-- Add more options for different alleles as needed -->
+                    </select><br>
+            </div>
+
+            <div id="record-parent-1-div">
+                <label class="w3-text" for="record-parent-1" id="parent-1-label">Parent 1: *</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-parent-1" name="record-parent-1">
+            </div>
+
+            <div id="record-parent-2-div">
+                <label class="w3-text" for="record-parent-2" id="parent-2-label">Parent 2: *</label>
+                <input class="w3-input w3-border w3-white" type="text" id="record-parent-2" name="record-parent-2">
+            </div>
+
+            <label class="w3-text" for="record-notes">Notes:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="record-notes" name="record-notes">
+
+            <label class="w3-text" for="record-projects">Projects:</label>
+            <input class="w3-input w3-border w3-white" type="text" id="record-projects" name="record-projects">
         </div>
-
-        <div id="record-parent-1-div">
-            <label for="record-parent-1" id="parent-1-label">Parent 1: *</label>
-            <input type="text" id="record-parent-1" name="record-parent-1"><br>
+        <input type="hidden" name="action" value="custom_form_submission">
+        <div class="w3-center" style="margin-bottom: 10px;">
+            <input type="submit" value="Submit" name="Submit" id="Submit" class="w3-button w3-blue-gray w3-round-large w3-padding-small">
         </div>
-
-        <div id="record-parent-2-div">
-            <label for="record-parent-2" id="parent-2-label">Parent 2: *</label>
-            <input type="text" id="record-parent-2" name="record-parent-2"><br>
-        </div>
-
-        <label for="record-notes">Notes:</label>
-        <input type="text" id="record-notes" name="record-notes"><br>
-
-        <label for="record-projects">Projects:</label>
-        <input type="text" id="record-projects" name="record-projects"><br>
-    </div>
-    <input type="hidden" name="action" value="custom_form_submission">
-    <input type="submit" value="Submit" name="Submit" id="Submit">
-</form>
-
+    </form>
+</div>
+</body>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var sampleTypeSelect = document.getElementById('sample-type');
