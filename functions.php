@@ -58,6 +58,7 @@ function process_num_field($name, $type) {
             return intval($value);
         }
         elseif ($type === 'float') {
+            error_log( print_r( floatval($value), true ) );
             return floatval($value);
         }
         else { // if type is not int or float
@@ -296,8 +297,104 @@ function form_submission() {
 		$thank_you_page_url = home_url('/submitted-successfully/'); 
     	wp_redirect($thank_you_page_url);
     	exit();
+
     }
+
 }
 add_action('init', 'form_submission');
 
+// Add this code to your theme's functions.php file
+
+// Add this code to your theme's functions.php file
+
+function display_sample_information( $atts ) {
+    // Shortcode attributes (if any)
+    $atts = shortcode_atts( array(
+        'sample_type' => '', // Default sample type
+    ), $atts );
+
+    // If sample_type is empty, return empty string
+    if (empty($atts['sample_type'])) {
+        return '';
+    }
+
+    // Define arrays to store headers and fields based on sample type
+    $headers = array();
+    $fields = array();
+
+    // Determine headers and fields based on the selected sample type
+    $sample_type = sanitize_text_field( $atts['sample_type'] );
+    if ( $sample_type === 'specimens' ) {
+        $headers = array( 'Name', 'Specimen Name', 'Specimen Collector', 'Print', 'Specimen', 
+        'Hymenophore', 'Veil'  ); //'Source Culture', 'Substrate', 'Specimen Fungarium', 'Notes', 'Flags', 'Source', 'Date', 'Fungarium Date', 'Floating', 'Sinking'
+        $fields = array( 'name', 'specimen_name', 'specimen_collector', 'print', 'specimen',
+        'hymenophore', 'veil' ); //, 'source_culture', 'substrate', 'specimen_fungarium', 'notes_specimen', 'flags_specimen', 'source', 'specimen_date', 'fungarium_date', 'float_float', 'float_sink'
+    } elseif ( $sample_type === 'cultures' ) {
+        $headers = array( 'Name', 'Culture Name', 'Collector', 'Date', 'Media', 'Location', 'Location Date' );
+        $fields = array( 'name', 'culture_name', 'culture_collector', 'culture_date', 'media', 'culture_location',
+        'culture_location_date' );
+    } elseif ( $sample_type === 'records' ) {
+        $headers = array( 'Species', 'Name', 'Type', 'Provider', 'Received Date', 'Link', 'Latitude' );
+        $fields = array( 'species', 'name', 'type', 'provider', 'received_date', 'link', 'lat' );
+    }
+
+    // Retrieve data from the database based on the selected sample type
+    global $wpdb;
+    $table_name = $sample_type; // Replace 'your_table_prefix_' with your actual table prefix
+    $results = $wpdb->get_results( "SELECT * FROM $table_name", ARRAY_A );
+
+    // Generate HTML markup for displaying the data
+    ob_start();
+    ?>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <table>
+        <tr>
+            <!-- Generate table headers -->
+            <?php foreach ( $headers as $header ) : ?>
+                <th><?php echo esc_html( $header ); ?></th>
+            <?php endforeach; ?>
+        </tr>
+        <?php foreach ( $results as $result ) : ?>
+            <tr>
+                <!-- Generate table data cells -->
+                <?php foreach ( $fields as $field ) : ?>
+                    <td><?php echo esc_html( $result[ $field ] ); ?></td>
+                <?php endforeach; ?>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode( 'sample_information', 'display_sample_information' );
+
+add_action('wp_ajax_get_sample_information', 'get_sample_information');
+add_action('wp_ajax_nopriv_get_sample_information', 'get_sample_information');
+
+function get_sample_information() {
+    if (isset($_POST['sample_type'])) {
+        $sample_type = sanitize_text_field($_POST['sample_type']);
+        ob_start();
+        echo do_shortcode('[sample_information sample_type="' . $sample_type . '"]');
+        $output = ob_get_clean();
+        echo $output;
+    }
+    wp_die();
+}
+
+
+function enqueue_child_scripts() {
+    wp_enqueue_script('child-change-type', get_stylesheet_directory_uri() . '/change-type.js', array('jquery'), '1.0', true);
+    wp_localize_script('child-change-type', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+}
+add_action('wp_enqueue_scripts', 'enqueue_child_scripts');
+
+
+
 ?>
+
